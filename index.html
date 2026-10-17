@@ -11,6 +11,11 @@
 
   <meta name="theme-color" content="#003a1f">
 
+  <!-- Comfortaa Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -19,7 +24,6 @@
   <!-- NAVIGATION -->
   <header class="site-header">
 
-    <!-- BRAND -->
     <a href="index.html" class="brand" aria-label="Soileva homepage">
       <span class="brand-mark" aria-hidden="true">
         <span></span><span></span><span></span><span></span>
@@ -27,8 +31,6 @@
       <span class="brand-name">soileva<span>.</span></span>
     </a>
 
-
-    <!-- MOBILE MENU BUTTON -->
     <button class="menu-toggle"
             id="menuToggle"
             type="button"
@@ -39,25 +41,14 @@
       <span></span>
     </button>
 
-
-    <!-- MAIN NAVIGATION -->
     <nav class="main-nav" id="mainNav" aria-label="Main navigation">
 
-      <!-- HOME -->
-      <a class="nav-home" href="index.html">
-        Home
-      </a>
+      <a class="nav-home" href="index.html">Home</a>
 
-
-      <!-- PRODUCE SECTION -->
       <div class="nav-produce">
-
         <span class="nav-section-label">OUR PRODUCE</span>
 
-
-        <!-- VEGETABLES -->
         <div class="nav-dropdown">
-
           <button class="dropdown-toggle"
                   type="button"
                   aria-expanded="false"
@@ -73,13 +64,9 @@
             <a href="vegetables.html#peppers">Peppers</a>
             <a href="vegetables.html#watermelon">Watermelon</a>
           </div>
-
         </div>
 
-
-        <!-- POULTRY -->
         <div class="nav-dropdown">
-
           <button class="dropdown-toggle"
                   type="button"
                   aria-expanded="false"
@@ -93,13 +80,9 @@
             <a href="poultry.html#eggs">Eggs</a>
             <a href="poultry.html#broilers">Broilers</a>
           </div>
-
         </div>
 
-
-        <!-- RICE -->
         <div class="nav-dropdown">
-
           <button class="dropdown-toggle"
                   type="button"
                   aria-expanded="false"
@@ -113,35 +96,23 @@
             <a href="rice.html#cultivation">Rice Cultivation</a>
             <a href="rice.html#sourcing">Rice Sourcing</a>
           </div>
-
         </div>
-
       </div>
 
+      <a class="nav-link" href="about.html">About Soileva</a>
 
-      <!-- ABOUT SOILEVA -->
-      <a class="nav-link" href="about.html">
-        About Soileva
-      </a>
-
-
-      <!-- FARMCARE -->
       <a class="nav-link nav-farmcare" href="farmcare.html">
         Soileva Farmcare
         <span class="nav-external" aria-hidden="true">↗</span>
       </a>
 
-
-      <!-- CONTACT -->
       <a class="nav-contact" href="#contact">
         Contact Us
         <span aria-hidden="true">↗</span>
       </a>
 
     </nav>
-
   </header>
-
 
   <main>
 
@@ -171,7 +142,6 @@
         <span class="hero-index">01 / 03</span>
       </div>
 
-
       <div class="hero-slide"
            style="--hero-image: url('images/hero-watermelon.jpg')">
 
@@ -194,7 +164,6 @@
 
         <span class="hero-index">02 / 03</span>
       </div>
-
 
       <div class="hero-slide"
            style="--hero-image: url('images/hero-poultry.jpg')">
@@ -219,7 +188,6 @@
         <span class="hero-index">03 / 03</span>
       </div>
 
-
       <div class="hero-controls">
 
         <button class="hero-arrow"
@@ -228,7 +196,6 @@
                 aria-label="Previous slide">←</button>
 
         <div class="hero-dots" aria-label="Choose slide">
-
           <button class="hero-dot active"
                   type="button"
                   aria-label="Slide 1"></button>
@@ -240,7 +207,6 @@
           <button class="hero-dot"
                   type="button"
                   aria-label="Slide 3"></button>
-
         </div>
 
         <button class="hero-arrow"
@@ -249,9 +215,7 @@
                 aria-label="Next slide">→</button>
 
       </div>
-
     </section>
-
 
     <!-- INTRODUCTION -->
     <section class="intro section-padding">
@@ -269,7 +233,6 @@
         </h2>
 
         <div class="intro-copy">
-
           <p>
             For over a decade, Soileva has been guided by a simple
             belief: good farming should help put good food on people's
@@ -285,19 +248,15 @@
           <a href="about.html" class="text-link">
             Get to know Soileva <span>↗</span>
           </a>
-
         </div>
 
       </div>
-
     </section>
-
 
     <!-- THREE FEATURE CARDS -->
     <section class="produce-section section-padding" id="our-produce">
 
       <div class="section-heading">
-
         <div>
           <span class="eyebrow eyebrow-green">FROM OUR FARM</span>
           <h2>What we're <span>growing.</span></h2>
@@ -307,9 +266,7 @@
           Explore the different parts of our farm
           and the food we bring to market.
         </p>
-
       </div>
-
 
       <div class="produce-cluster">
 
@@ -317,105 +274,279 @@
         <a href="vegetables.html"
            class="produce-card vegetables-card">
 
-          <img src="images/vegetables-card.jpg"
-               alt="Fresh vegetables growing on the farm"
-               loading="lazy">
+          <div class="produce-illustration vegetables-illustration"
+               aria-hidden="true">
+
+            <svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="cabbageLeaf" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#a8df69"/>
+                  <stop offset="1" stop-color="#43b02a"/>
+                </linearGradient>
+                <linearGradient id="leafDark" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#43b02a"/>
+                  <stop offset="1" stop-color="#126b2d"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Left leafy vegetable -->
+              <path d="M117 181 C53 172 38 124 57 89 C86 98 113 130 117 181Z"
+                    fill="url(#leafDark)"/>
+              <path d="M112 178 Q88 135 62 96"
+                    fill="none" stroke="#c2ec8b" stroke-width="3"
+                    stroke-linecap="round"/>
+
+              <path d="M132 180 C73 151 79 97 111 72 C140 102 148 143 132 180Z"
+                    fill="url(#cabbageLeaf)"/>
+              <path d="M131 175 Q124 125 112 78"
+                    fill="none" stroke="#e0f7b5" stroke-width="3"
+                    stroke-linecap="round"/>
+
+              <!-- Cabbage outer leaves -->
+              <path d="M159 189 C99 165 91 119 120 91 C151 103 173 144 159 189Z"
+                    fill="#2b922e"/>
+              <path d="M157 184 Q143 135 123 96"
+                    fill="none" stroke="#a7e575" stroke-width="3"/>
+
+              <path d="M162 188 C177 128 220 103 251 120 C249 163 211 188 162 188Z"
+                    fill="url(#leafDark)"/>
+              <path d="M167 183 Q209 149 245 124"
+                    fill="none" stroke="#a7e575" stroke-width="3"/>
+
+              <!-- Cabbage head -->
+              <path d="M118 153 C99 126 115 94 145 86 C166 62 205 77 215 103 C239 123 222 159 198 172 C170 190 136 178 118 153Z"
+                    fill="url(#cabbageLeaf)"/>
+              <path d="M145 88 C126 110 135 143 161 168"
+                    fill="none" stroke="#d8f5a9" stroke-width="4"
+                    stroke-linecap="round"/>
+              <path d="M207 105 C188 109 172 135 172 171"
+                    fill="none" stroke="#d8f5a9" stroke-width="4"
+                    stroke-linecap="round"/>
+              <path d="M117 135 Q164 115 214 139"
+                    fill="none" stroke="#d8f5a9" stroke-width="3"
+                    stroke-linecap="round"/>
+
+              <!-- Small sprout -->
+              <path d="M76 198 Q83 174 104 174 Q101 194 76 198Z"
+                    fill="#a8df69"/>
+              <path d="M78 198 L100 178"
+                    stroke="#e0f7b5" stroke-width="2"
+                    stroke-linecap="round"/>
+
+              <!-- Ground -->
+              <ellipse cx="161" cy="202" rx="105" ry="9"
+                       fill="#003a1f" opacity=".16"/>
+            </svg>
+
+          </div>
 
           <span class="card-number">01</span>
-
           <div class="card-overlay"></div>
 
           <div class="card-content">
-
             <span class="card-category">FRESH FROM THE FIELD</span>
-
             <h3>Vegetables</h3>
-
             <p>Freshness grown from the soil.</p>
 
             <span class="card-link">
               Explore vegetables <span>↗</span>
             </span>
-
           </div>
 
           <span class="card-decoration" aria-hidden="true"></span>
-
         </a>
-
 
         <!-- POULTRY -->
         <a href="poultry.html"
            class="produce-card poultry-card">
 
-          <img src="images/poultry-card.jpg"
-               alt="Healthy poultry raised on the farm"
-               loading="lazy">
+          <div class="produce-illustration poultry-illustration"
+               aria-hidden="true">
+
+            <svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="featherWhite" x1="0" y1="0" x2="0.9" y2="1">
+                  <stop offset="0" stop-color="#ffffff"/>
+                  <stop offset="1" stop-color="#dcebd5"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Tail feathers -->
+              <path d="M190 131 C220 91 248 99 248 122 C240 142 216 150 190 147Z"
+                    fill="#d9e9d1"/>
+              <path d="M190 142 C220 120 245 129 242 148 C225 161 207 159 188 151Z"
+                    fill="#f8fff3"/>
+
+              <!-- Body -->
+              <path d="M88 151 C84 115 113 83 157 82 C192 80 218 108 216 143 C214 172 190 187 153 185 C119 184 92 175 88 151Z"
+                    fill="url(#featherWhite)"/>
+
+              <!-- Wing -->
+              <path d="M115 143 C123 117 153 107 179 120 C194 128 195 149 178 162 C154 177 126 164 115 143Z"
+                    fill="#c7dfb8"/>
+              <path d="M127 144 Q151 130 176 145"
+                    fill="none" stroke="#a8c999" stroke-width="3"
+                    stroke-linecap="round"/>
+
+              <!-- Neck and head -->
+              <path d="M170 119 C179 94 177 73 195 59 C213 46 237 60 237 79 C237 97 219 112 199 111 L191 135Z"
+                    fill="url(#featherWhite)"/>
+
+              <!-- Comb -->
+              <path d="M194 61 C184 48 191 38 201 46 C206 31 219 37 220 48 C232 37 242 47 233 59 C222 65 207 66 194 61Z"
+                    fill="#e34c43"/>
+
+              <!-- Beak -->
+              <path d="M234 74 L258 83 L235 90Z"
+                    fill="#e9a52b"/>
+
+              <!-- Eye -->
+              <circle cx="220" cy="72" r="4.5" fill="#173a22"/>
+              <circle cx="221.5" cy="70.5" r="1.4" fill="#ffffff"/>
+
+              <!-- Wattle -->
+              <path d="M217 94 C227 95 228 105 219 110 C214 105 213 100 217 94Z"
+                    fill="#e34c43"/>
+
+              <!-- Legs -->
+              <path d="M135 181 L131 201 M178 181 L182 201"
+                    fill="none" stroke="#e9a52b" stroke-width="6"
+                    stroke-linecap="round"/>
+              <path d="M131 201 L119 205 M131 201 L137 207 M182 201 L170 205 M182 201 L190 206"
+                    fill="none" stroke="#e9a52b" stroke-width="4"
+                    stroke-linecap="round"/>
+
+              <!-- Ground -->
+              <ellipse cx="160" cy="211" rx="89" ry="8"
+                       fill="#003a1f" opacity=".16"/>
+
+              <!-- Decorative grain -->
+              <path d="M74 112 Q66 98 77 88 Q88 100 74 112Z"
+                    fill="#9ad76b"/>
+              <path d="M67 130 Q55 116 67 106 Q79 118 67 130Z"
+                    fill="#43b02a"/>
+            </svg>
+
+          </div>
 
           <span class="card-number">02</span>
-
           <div class="card-overlay"></div>
 
           <div class="card-content">
-
             <span class="card-category">RAISED WITH CARE</span>
-
             <h3>Poultry</h3>
-
             <p>Eggs and poultry for everyday nourishment.</p>
 
             <span class="card-link">
               Explore poultry <span>↗</span>
             </span>
-
           </div>
 
           <span class="card-decoration" aria-hidden="true"></span>
-
         </a>
-
 
         <!-- RICE -->
         <a href="rice.html"
            class="produce-card rice-card">
 
-          <img src="images/rice-card.jpg"
-               alt="Rice growing in a farm field"
-               loading="lazy">
+          <div class="produce-illustration rice-illustration"
+               aria-hidden="true">
+
+            <svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="riceStem" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#438c2d"/>
+                  <stop offset="1" stop-color="#a4d65e"/>
+                </linearGradient>
+                <linearGradient id="riceGrain" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#fff2b5"/>
+                  <stop offset="1" stop-color="#e3b94f"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Main stem -->
+              <path d="M159 208 C160 166 166 122 176 58"
+                    fill="none" stroke="url(#riceStem)" stroke-width="7"
+                    stroke-linecap="round"/>
+
+              <!-- Leaves -->
+              <path d="M161 171 C125 163 103 137 105 113 C134 121 154 142 161 171Z"
+                    fill="#43b02a"/>
+              <path d="M162 171 Q140 143 109 116"
+                    fill="none" stroke="#a7e575" stroke-width="3"/>
+
+              <path d="M166 148 C189 120 218 112 238 122 C224 147 194 157 166 148Z"
+                    fill="#2e852b"/>
+              <path d="M170 146 Q202 130 233 124"
+                    fill="none" stroke="#a7e575" stroke-width="3"/>
+
+              <path d="M164 195 C131 192 111 176 105 158 C132 157 153 174 164 195Z"
+                    fill="#74bd3a"/>
+              <path d="M165 194 Q136 173 109 161"
+                    fill="none" stroke="#d1ef9e" stroke-width="3"/>
+
+              <!-- Panicle branches -->
+              <path d="M176 66 C150 54 133 42 122 28
+                       M174 79 C202 65 219 49 226 34
+                       M171 94 C147 88 126 77 114 62
+                       M169 107 C194 99 215 83 225 68
+                       M166 120 C148 116 136 105 127 94"
+                    fill="none" stroke="#b4d96b" stroke-width="3"
+                    stroke-linecap="round"/>
+
+              <!-- Rice grains -->
+              <g fill="url(#riceGrain)" stroke="#c9a342" stroke-width="1">
+                <ellipse cx="121" cy="27" rx="6" ry="11" transform="rotate(-42 121 27)"/>
+                <ellipse cx="137" cy="42" rx="6" ry="11" transform="rotate(-42 137 42)"/>
+                <ellipse cx="151" cy="53" rx="6" ry="11" transform="rotate(-48 151 53)"/>
+
+                <ellipse cx="227" cy="32" rx="6" ry="11" transform="rotate(35 227 32)"/>
+                <ellipse cx="211" cy="48" rx="6" ry="11" transform="rotate(35 211 48)"/>
+                <ellipse cx="194" cy="62" rx="6" ry="11" transform="rotate(40 194 62)"/>
+
+                <ellipse cx="114" cy="61" rx="6" ry="11" transform="rotate(-50 114 61)"/>
+                <ellipse cx="132" cy="76" rx="6" ry="11" transform="rotate(-45 132 76)"/>
+                <ellipse cx="149" cy="87" rx="6" ry="11" transform="rotate(-45 149 87)"/>
+
+                <ellipse cx="226" cy="67" rx="6" ry="11" transform="rotate(38 226 67)"/>
+                <ellipse cx="207" cy="83" rx="6" ry="11" transform="rotate(38 207 83)"/>
+                <ellipse cx="188" cy="96" rx="6" ry="11" transform="rotate(38 188 96)"/>
+
+                <ellipse cx="127" cy="94" rx="6" ry="11" transform="rotate(-42 127 94)"/>
+                <ellipse cx="145" cy="105" rx="6" ry="11" transform="rotate(-42 145 105)"/>
+              </g>
+
+              <!-- Ground -->
+              <ellipse cx="160" cy="212" rx="69" ry="8"
+                       fill="#003a1f" opacity=".16"/>
+            </svg>
+
+          </div>
 
           <span class="card-number">03</span>
-
           <div class="card-overlay"></div>
 
           <div class="card-content">
-
             <span class="card-category">FROM FIELD TO FOOD</span>
-
             <h3>Rice</h3>
-
             <p>Supporting the journey from harvest to table.</p>
 
             <span class="card-link">
               Explore rice <span>↗</span>
             </span>
-
           </div>
 
           <span class="card-decoration" aria-hidden="true"></span>
-
         </a>
 
       </div>
-
     </section>
-
 
     <!-- SUSTAINABILITY -->
     <section class="sustainability section-padding"
              id="sustainability">
 
       <div class="sustainability-visual">
-
         <img src="images/farmer-in-field.jpg"
              alt="Farmer working in a cultivated field"
              loading="lazy">
@@ -425,11 +556,9 @@
           <span>WITH</span>
           <strong>CARE</strong>
         </div>
-
       </div>
 
       <div class="sustainability-copy">
-
         <span class="eyebrow eyebrow-green">OUR RESPONSIBILITY</span>
 
         <h2>Care for the land.<br><span>Care for people.</span></h2>
@@ -444,17 +573,13 @@
         <a href="about.html#sustainability" class="button button-green">
           Our approach to sustainability <span>↗</span>
         </a>
-
       </div>
-
     </section>
-
 
     <!-- FARMCARE -->
     <section class="farmcare-banner">
 
       <div class="farmcare-copy">
-
         <span class="eyebrow">FOR FARMERS</span>
 
         <h2>Good farming needs<br>the right support.</h2>
@@ -467,7 +592,6 @@
         <a href="farmcare.html" class="button button-light">
           Explore Farmcare <span>↗</span>
         </a>
-
       </div>
 
       <div class="farmcare-orbit" aria-hidden="true">
@@ -476,36 +600,28 @@
         <span></span>
         <span></span>
       </div>
-
     </section>
-
 
     <!-- CONTACT -->
     <section class="contact-section section-padding" id="contact">
 
       <div class="contact-pill">
-
         <div class="contact-copy">
-
           <span class="eyebrow eyebrow-green">LET'S TALK</span>
 
           <h2>Looking for fresh produce?</h2>
 
           <p>Contact us to discuss orders and availability.</p>
-
         </div>
 
         <a href="mailto:hello@soileva.com"
            class="button button-green">
           Contact us to order <span>↗</span>
         </a>
-
       </div>
-
     </section>
 
   </main>
-
 
   <!-- FOOTER -->
   <footer class="site-footer">
@@ -518,35 +634,24 @@
       </span>
 
       <span class="brand-name">soileva<span>.</span></span>
-
     </a>
 
     <p class="footer-tagline">Better farming, food for all.</p>
 
-
     <div class="footer-links">
-
       <a href="vegetables.html">Vegetables</a>
-
       <a href="poultry.html">Poultry</a>
-
       <a href="rice.html">Rice</a>
-
       <a href="about.html">About Soileva</a>
-
       <a href="farmcare.html">Soileva Farmcare</a>
-
       <a href="#contact">Contact Us</a>
-
     </div>
-
 
     <p class="copyright">
       © <span id="copyrightYear"></span> Soileva. All rights reserved.
     </p>
 
   </footer>
-
 
   <script src="script.js"></script>
 
