@@ -28,9 +28,9 @@ body {
   margin: 0;
   background: var(--white);
   color: var(--deep-green);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Comfortaa", sans-serif;
   -webkit-font-smoothing: antialiased;
-}
+} 
 
 body.menu-open {
   overflow: hidden;
@@ -800,6 +800,7 @@ h3 {
   font-size: 38px;
 }
 
+/* ========================================= INLINE SVG PRODUCE ILLUSTRATIONS No separate image files required ========================================= */ .produce-illustration { position: absolute; inset: 0; z-index: -2; display: grid; place-items: center; overflow: hidden; background: radial-gradient( circle at 50% 42%, rgba(67, 176, 42, 0.18), transparent 65% ), linear-gradient(145deg, #e9f5df, #c8e4b7); } .produce-illustration svg { display: block; width: min(90%, 330px); height: auto; max-height: 85%; overflow: visible; filter: drop-shadow(0 12px 12px rgba(0, 58, 31, 0.10)); transition: transform 0.7s ease; } .produce-card:hover .produce-illustration svg { transform: scale(1.07); } /* Each illustration has its own subtle background. */ .vegetables-illustration { background: radial-gradient( ellipse at 50% 45%, rgba(255, 255, 255, 0.9), transparent 62% ), linear-gradient(145deg, #e7f5d9, #b9dca2); } .poultry-illustration { background: radial-gradient( ellipse at 50% 45%, rgba(255, 255, 255, 0.95), transparent 65% ), linear-gradient(145deg, #f5f1df, #d9e9c8); } .rice-illustration { background: radial-gradient( ellipse at 50% 45%, rgba(255, 255, 255, 0.9), transparent 62% ), linear-gradient(145deg, #f7f1d8, #dce9b7); } /* The SVG illustrations replace the old card photographs. Keep the text readable over the illustrations. */ .vegetables-card .card-overlay, .poultry-card .card-overlay, .rice-card .card-overlay { background: linear-gradient( 0deg, rgba(0, 28, 14, 0.94) 0%, rgba(0, 28, 14, 0.74) 34%, rgba(0, 28, 14, 0.05) 100% ); } 
 
 /* =========================================
    SUSTAINABILITY
