@@ -30,7 +30,7 @@ body {
   color: var(--deep-green);
   font-family: "Comfortaa", sans-serif;
   -webkit-font-smoothing: antialiased;
-} 
+}
 
 body.menu-open {
   overflow: hidden;
@@ -127,8 +127,6 @@ h3 {
 
 /* =========================================
    DESKTOP NAVIGATION
-   Logo on the left.
-   Navigation clearly grouped on the right.
 ========================================= */
 
 .site-header {
@@ -145,14 +143,10 @@ h3 {
   border-bottom: 1px solid rgba(0, 58, 31, 0.08);
 }
 
-/* Keep the logo separate from the navigation. */
-
 .site-header > .brand {
   flex-shrink: 0;
   margin-right: auto;
 }
-
-/* Main navigation sits to the side of the logo. */
 
 .main-nav {
   display: flex;
@@ -161,8 +155,6 @@ h3 {
   gap: clamp(12px, 1.6vw, 24px);
   margin-left: auto;
 }
-
-/* Home and About links. */
 
 .nav-home,
 .nav-link {
@@ -186,6 +178,7 @@ h3 {
   color: var(--light-green);
   font-size: 15px;
 }
+
 
 /* PRODUCE GROUP */
 
@@ -220,7 +213,7 @@ h3 {
   justify-content: space-between;
   gap: 7px;
   min-height: 40px;
-  padding: 9px 9px;
+  padding: 9px;
   border: 0;
   border-radius: 11px;
   background: transparent;
@@ -258,6 +251,7 @@ h3 {
   transform: rotate(45deg);
 }
 
+
 /* Dropdown panels */
 
 .dropdown-menu {
@@ -278,8 +272,6 @@ h3 {
   display: block;
   animation: menuDrop 0.2s ease both;
 }
-
-/* Prevent the last dropdown from overflowing the right edge. */
 
 .nav-dropdown:last-child .dropdown-menu {
   right: 0;
@@ -303,6 +295,7 @@ h3 {
   background: var(--soft-green);
   color: var(--deep-green);
 }
+
 
 /* Contact button */
 
@@ -333,8 +326,6 @@ h3 {
   background: var(--light-green);
   transform: translateY(-2px);
 }
-
-/* Mobile button is hidden on desktop. */
 
 .menu-toggle {
   display: none;
@@ -627,6 +618,7 @@ h3 {
   line-height: 1.8;
 }
 
+
 /* Three-card asymmetric composition */
 
 .produce-cluster {
@@ -661,17 +653,19 @@ h3 {
   box-shadow: 0 25px 50px rgba(0, 58, 31, 0.18);
 }
 
-.produce-card img {
+/* Keep any card photos behind the card content. */
+
+.produce-card > img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.7s ease;
   z-index: -2;
+  transition: transform 0.7s ease;
 }
 
-.produce-card:hover img {
+.produce-card:hover > img {
   transform: scale(1.06);
 }
 
@@ -700,10 +694,118 @@ h3 {
   transform: translateY(-8px);
 }
 
+
+/* =========================================
+   PRODUCE CARD SVG ILLUSTRATIONS
+   FIXED STACKING ORDER
+========================================= */
+
+/*
+   Important:
+   The SVG illustrations must not use a negative z-index.
+   Each card has isolation: isolate, so negative stacking
+   can place the illustration behind the card background.
+*/
+
+.produce-illustration {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(67, 176, 42, 0.18),
+      transparent 65%
+    ),
+    linear-gradient(145deg, #e9f5df, #c8e4b7);
+  pointer-events: none;
+}
+
+.produce-illustration svg {
+  display: block;
+  position: relative;
+  z-index: 0;
+  width: min(90%, 330px);
+  height: auto;
+  max-height: 85%;
+  overflow: visible;
+  filter: drop-shadow(0 8px 8px rgba(0, 58, 31, 0.08));
+  transition: transform 0.7s ease;
+}
+
+/*
+   The original SVGs use very pale lines.
+   Deep green makes the fine line-art visible against
+   the light illustration backgrounds.
+*/
+
+.produce-illustration svg path,
+.produce-illustration svg ellipse,
+.produce-illustration svg circle,
+.produce-illustration svg line,
+.produce-illustration svg polyline,
+.produce-illustration svg polygon,
+.produce-illustration svg rect {
+  stroke: var(--deep-green) !important;
+  vector-effect: non-scaling-stroke;
+}
+
+.produce-card:hover .produce-illustration svg {
+  transform: scale(1.07);
+}
+
+
+/* Individual illustration backgrounds */
+
+.vegetables-illustration {
+  background:
+    radial-gradient(
+      ellipse at 50% 45%,
+      rgba(255, 255, 255, 0.9),
+      transparent 62%
+    ),
+    linear-gradient(145deg, #e7f5d9, #b9dca2);
+}
+
+.poultry-illustration {
+  background:
+    radial-gradient(
+      ellipse at 50% 45%,
+      rgba(255, 255, 255, 0.95),
+      transparent 65%
+    ),
+    linear-gradient(145deg, #f5f1df, #d9e9c8);
+}
+
+.rice-illustration {
+  background:
+    radial-gradient(
+      ellipse at 50% 45%,
+      rgba(255, 255, 255, 0.9),
+      transparent 62%
+    ),
+    linear-gradient(145deg, #f7f1d8, #dce9b7);
+}
+
+
+/* =========================================
+   CARD OVERLAY AND CONTENT
+========================================= */
+
+/*
+   Layer order:
+   0 = illustration
+   1 = dark gradient overlay
+   2 = card labels, numbers, decorations and text
+*/
+
 .card-overlay {
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 1;
   background:
     linear-gradient(
       0deg,
@@ -711,12 +813,26 @@ h3 {
       rgba(0, 28, 14, 0.45) 43%,
       rgba(0, 28, 14, 0.06) 100%
     );
+  pointer-events: none;
+}
+
+.vegetables-card .card-overlay,
+.poultry-card .card-overlay,
+.rice-card .card-overlay {
+  background:
+    linear-gradient(
+      0deg,
+      rgba(0, 28, 14, 0.94) 0%,
+      rgba(0, 28, 14, 0.74) 34%,
+      rgba(0, 28, 14, 0.05) 100%
+    );
 }
 
 .card-number {
   position: absolute;
   top: 23px;
   left: 24px;
+  z-index: 2;
   display: grid;
   place-items: center;
   width: 43px;
@@ -734,6 +850,7 @@ h3 {
   right: 27px;
   bottom: 28px;
   left: 27px;
+  z-index: 2;
 }
 
 .card-category {
@@ -788,6 +905,7 @@ h3 {
   position: absolute;
   top: -35px;
   right: -35px;
+  z-index: 2;
   width: 100px;
   height: 100px;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -800,7 +918,6 @@ h3 {
   font-size: 38px;
 }
 
-/* ========================================= INLINE SVG PRODUCE ILLUSTRATIONS No separate image files required ========================================= */ .produce-illustration { position: absolute; inset: 0; z-index: -2; display: grid; place-items: center; overflow: hidden; background: radial-gradient( circle at 50% 42%, rgba(67, 176, 42, 0.18), transparent 65% ), linear-gradient(145deg, #e9f5df, #c8e4b7); } .produce-illustration svg { display: block; width: min(90%, 330px); height: auto; max-height: 85%; overflow: visible; filter: drop-shadow(0 12px 12px rgba(0, 58, 31, 0.10)); transition: transform 0.7s ease; } .produce-card:hover .produce-illustration svg { transform: scale(1.07); } /* Each illustration has its own subtle background. */ .vegetables-illustration { background: radial-gradient( ellipse at 50% 45%, rgba(255, 255, 255, 0.9), transparent 62% ), linear-gradient(145deg, #e7f5d9, #b9dca2); } .poultry-illustration { background: radial-gradient( ellipse at 50% 45%, rgba(255, 255, 255, 0.95), transparent 65% ), linear-gradient(145deg, #f5f1df, #d9e9c8); } .rice-illustration { background: radial-gradient( ellipse at 50% 45%, rgba(255, 255, 255, 0.9), transparent 62% ), linear-gradient(145deg, #f7f1d8, #dce9b7); } /* The SVG illustrations replace the old card photographs. Keep the text readable over the illustrations. */ .vegetables-card .card-overlay, .poultry-card .card-overlay, .rice-card .card-overlay { background: linear-gradient( 0deg, rgba(0, 28, 14, 0.94) 0%, rgba(0, 28, 14, 0.74) 34%, rgba(0, 28, 14, 0.05) 100% ); } 
 
 /* =========================================
    SUSTAINABILITY
@@ -911,6 +1028,8 @@ h3 {
   font-size: 14px;
   line-height: 1.8;
 }
+
+/* Retained for compatibility if the old orbit is still in the HTML. */
 
 .farmcare-orbit {
   position: absolute;
@@ -1206,8 +1325,6 @@ h3 {
     font-size: 15px;
   }
 
-  /* Produce is a distinct navigation group. */
-
   .nav-produce {
     display: flex;
     flex-direction: column;
@@ -1400,9 +1517,9 @@ h3 {
   }
 
   /*
-    Preserve the grouped three-card composition on mobile.
+    Mobile card arrangement:
     Vegetables spans the top.
-    Poultry and rice sit side-by-side underneath.
+    Poultry and Rice sit side-by-side underneath.
   */
 
   .produce-cluster {
@@ -1441,6 +1558,19 @@ h3 {
 
   .produce-card:hover {
     transform: translateY(-4px);
+  }
+
+  /* Keep the illustrations sized correctly on mobile. */
+
+  .produce-illustration svg {
+    width: min(86%, 260px);
+    max-height: 72%;
+  }
+
+  .poultry-card .produce-illustration svg,
+  .rice-card .produce-illustration svg {
+    width: min(90%, 180px);
+    max-height: 60%;
   }
 
   .card-content {
