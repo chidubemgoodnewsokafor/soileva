@@ -19,6 +19,7 @@
   <!-- NAVIGATION -->
   <header class="site-header">
 
+    <!-- BRAND -->
     <a href="index.html" class="brand" aria-label="Soileva homepage">
       <span class="brand-mark" aria-hidden="true">
         <span></span><span></span><span></span><span></span>
@@ -26,6 +27,8 @@
       <span class="brand-name">soileva<span>.</span></span>
     </a>
 
+
+    <!-- MOBILE MENU BUTTON -->
     <button class="menu-toggle"
             id="menuToggle"
             type="button"
@@ -36,67 +39,107 @@
       <span></span>
     </button>
 
-    <nav class="main-nav" id="mainNav">
 
-      <a class="nav-home" href="index.html">Home</a>
+    <!-- MAIN NAVIGATION -->
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
 
+      <!-- HOME -->
+      <a class="nav-home" href="index.html">
+        Home
+      </a>
+
+
+      <!-- PRODUCE SECTION -->
       <div class="nav-produce">
 
-        <span class="nav-section-label">PRODUCE</span>
+        <span class="nav-section-label">OUR PRODUCE</span>
 
+
+        <!-- VEGETABLES -->
         <div class="nav-dropdown">
+
           <button class="dropdown-toggle"
                   type="button"
-                  aria-expanded="false">
-            Vegetables <span class="dropdown-icon">+</span>
+                  aria-expanded="false"
+                  aria-controls="vegetablesDropdown">
+            <span>Vegetables</span>
+            <span class="dropdown-icon" aria-hidden="true">+</span>
           </button>
 
-          <div class="dropdown-menu">
+          <div class="dropdown-menu" id="vegetablesDropdown">
             <a href="vegetables.html">All Vegetables</a>
             <a href="vegetables.html#cabbage">Cabbage</a>
             <a href="vegetables.html#cucumber">Cucumber</a>
             <a href="vegetables.html#peppers">Peppers</a>
             <a href="vegetables.html#watermelon">Watermelon</a>
           </div>
+
         </div>
 
+
+        <!-- POULTRY -->
         <div class="nav-dropdown">
+
           <button class="dropdown-toggle"
                   type="button"
-                  aria-expanded="false">
-            Poultry <span class="dropdown-icon">+</span>
+                  aria-expanded="false"
+                  aria-controls="poultryDropdown">
+            <span>Poultry</span>
+            <span class="dropdown-icon" aria-hidden="true">+</span>
           </button>
 
-          <div class="dropdown-menu">
+          <div class="dropdown-menu" id="poultryDropdown">
             <a href="poultry.html">All Poultry</a>
             <a href="poultry.html#eggs">Eggs</a>
             <a href="poultry.html#broilers">Broilers</a>
           </div>
+
         </div>
 
+
+        <!-- RICE -->
         <div class="nav-dropdown">
+
           <button class="dropdown-toggle"
                   type="button"
-                  aria-expanded="false">
-            Rice <span class="dropdown-icon">+</span>
+                  aria-expanded="false"
+                  aria-controls="riceDropdown">
+            <span>Rice</span>
+            <span class="dropdown-icon" aria-hidden="true">+</span>
           </button>
 
-          <div class="dropdown-menu">
+          <div class="dropdown-menu" id="riceDropdown">
             <a href="rice.html">Rice Overview</a>
             <a href="rice.html#cultivation">Rice Cultivation</a>
             <a href="rice.html#sourcing">Rice Sourcing</a>
           </div>
+
         </div>
 
       </div>
 
-      <a class="nav-link" href="about.html">About Soileva</a>
 
-      <a class="nav-link" href="farmcare.html">Soileva Farmcare</a>
+      <!-- ABOUT SOILEVA -->
+      <a class="nav-link" href="about.html">
+        About Soileva
+      </a>
 
-      <a class="nav-contact" href="#contact">Contact Us <span>↗</span></a>
+
+      <!-- FARMCARE -->
+      <a class="nav-link nav-farmcare" href="farmcare.html">
+        Soileva Farmcare
+        <span class="nav-external" aria-hidden="true">↗</span>
+      </a>
+
+
+      <!-- CONTACT -->
+      <a class="nav-contact" href="#contact">
+        Contact Us
+        <span aria-hidden="true">↗</span>
+      </a>
 
     </nav>
+
   </header>
 
 
@@ -178,27 +221,33 @@
 
 
       <div class="hero-controls">
+
         <button class="hero-arrow"
                 id="heroPrev"
                 type="button"
                 aria-label="Previous slide">←</button>
 
         <div class="hero-dots" aria-label="Choose slide">
+
           <button class="hero-dot active"
                   type="button"
                   aria-label="Slide 1"></button>
+
           <button class="hero-dot"
                   type="button"
                   aria-label="Slide 2"></button>
+
           <button class="hero-dot"
                   type="button"
                   aria-label="Slide 3"></button>
+
         </div>
 
         <button class="hero-arrow"
                 id="heroNext"
                 type="button"
                 aria-label="Next slide">→</button>
+
       </div>
 
     </section>
@@ -220,6 +269,7 @@
         </h2>
 
         <div class="intro-copy">
+
           <p>
             For over a decade, Soileva has been guided by a simple
             belief: good farming should help put good food on people's
@@ -235,9 +285,11 @@
           <a href="about.html" class="text-link">
             Get to know Soileva <span>↗</span>
           </a>
+
         </div>
 
       </div>
+
     </section>
 
 
@@ -245,6 +297,7 @@
     <section class="produce-section section-padding" id="our-produce">
 
       <div class="section-heading">
+
         <div>
           <span class="eyebrow eyebrow-green">FROM OUR FARM</span>
           <h2>What we're <span>growing.</span></h2>
@@ -254,6 +307,7 @@
           Explore the different parts of our farm
           and the food we bring to market.
         </p>
+
       </div>
 
 
@@ -272,13 +326,21 @@
           <div class="card-overlay"></div>
 
           <div class="card-content">
+
             <span class="card-category">FRESH FROM THE FIELD</span>
+
             <h3>Vegetables</h3>
+
             <p>Freshness grown from the soil.</p>
-            <span class="card-link">Explore vegetables <span>↗</span></span>
+
+            <span class="card-link">
+              Explore vegetables <span>↗</span>
+            </span>
+
           </div>
 
           <span class="card-decoration" aria-hidden="true"></span>
+
         </a>
 
 
@@ -295,13 +357,21 @@
           <div class="card-overlay"></div>
 
           <div class="card-content">
+
             <span class="card-category">RAISED WITH CARE</span>
+
             <h3>Poultry</h3>
+
             <p>Eggs and poultry for everyday nourishment.</p>
-            <span class="card-link">Explore poultry <span>↗</span></span>
+
+            <span class="card-link">
+              Explore poultry <span>↗</span>
+            </span>
+
           </div>
 
           <span class="card-decoration" aria-hidden="true"></span>
+
         </a>
 
 
@@ -318,13 +388,21 @@
           <div class="card-overlay"></div>
 
           <div class="card-content">
+
             <span class="card-category">FROM FIELD TO FOOD</span>
+
             <h3>Rice</h3>
+
             <p>Supporting the journey from harvest to table.</p>
-            <span class="card-link">Explore rice <span>↗</span></span>
+
+            <span class="card-link">
+              Explore rice <span>↗</span>
+            </span>
+
           </div>
 
           <span class="card-decoration" aria-hidden="true"></span>
+
         </a>
 
       </div>
@@ -337,6 +415,7 @@
              id="sustainability">
 
       <div class="sustainability-visual">
+
         <img src="images/farmer-in-field.jpg"
              alt="Farmer working in a cultivated field"
              loading="lazy">
@@ -346,9 +425,11 @@
           <span>WITH</span>
           <strong>CARE</strong>
         </div>
+
       </div>
 
       <div class="sustainability-copy">
+
         <span class="eyebrow eyebrow-green">OUR RESPONSIBILITY</span>
 
         <h2>Care for the land.<br><span>Care for people.</span></h2>
@@ -363,6 +444,7 @@
         <a href="about.html#sustainability" class="button button-green">
           Our approach to sustainability <span>↗</span>
         </a>
+
       </div>
 
     </section>
@@ -372,7 +454,9 @@
     <section class="farmcare-banner">
 
       <div class="farmcare-copy">
+
         <span class="eyebrow">FOR FARMERS</span>
+
         <h2>Good farming needs<br>the right support.</h2>
 
         <p>
@@ -383,6 +467,7 @@
         <a href="farmcare.html" class="button button-light">
           Explore Farmcare <span>↗</span>
         </a>
+
       </div>
 
       <div class="farmcare-orbit" aria-hidden="true">
@@ -401,9 +486,13 @@
       <div class="contact-pill">
 
         <div class="contact-copy">
+
           <span class="eyebrow eyebrow-green">LET'S TALK</span>
+
           <h2>Looking for fresh produce?</h2>
+
           <p>Contact us to discuss orders and availability.</p>
+
         </div>
 
         <a href="mailto:hello@soileva.com"
@@ -421,29 +510,43 @@
   <!-- FOOTER -->
   <footer class="site-footer">
 
-    <a href="index.html" class="brand footer-brand">
+    <a href="index.html" class="brand footer-brand"
+       aria-label="Soileva homepage">
+
       <span class="brand-mark" aria-hidden="true">
         <span></span><span></span><span></span><span></span>
       </span>
+
       <span class="brand-name">soileva<span>.</span></span>
+
     </a>
 
     <p class="footer-tagline">Better farming, food for all.</p>
 
+
     <div class="footer-links">
+
       <a href="vegetables.html">Vegetables</a>
+
       <a href="poultry.html">Poultry</a>
+
       <a href="rice.html">Rice</a>
-      <a href="about.html">About</a>
-      <a href="farmcare.html">Farmcare</a>
-      <a href="#contact">Contact</a>
+
+      <a href="about.html">About Soileva</a>
+
+      <a href="farmcare.html">Soileva Farmcare</a>
+
+      <a href="#contact">Contact Us</a>
+
     </div>
+
 
     <p class="copyright">
       © <span id="copyrightYear"></span> Soileva. All rights reserved.
     </p>
 
   </footer>
+
 
   <script src="script.js"></script>
 
