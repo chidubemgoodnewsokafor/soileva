@@ -126,7 +126,9 @@ h3 {
 
 
 /* =========================================
-   BOLD NAVIGATION
+   DESKTOP NAVIGATION
+   Logo on the left.
+   Navigation clearly grouped on the right.
 ========================================= */
 
 .site-header {
@@ -135,26 +137,43 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
+  gap: 28px;
   width: 100%;
-  padding: 22px max(5%, calc((100% - 1400px) / 2));
+  min-height: 94px;
+  padding: 18px max(4%, calc((100% - 1400px) / 2));
   background: var(--white);
   border-bottom: 1px solid rgba(0, 58, 31, 0.08);
 }
+
+/* Keep the logo separate from the navigation. */
+
+.site-header > .brand {
+  flex-shrink: 0;
+  margin-right: auto;
+}
+
+/* Main navigation sits to the side of the logo. */
 
 .main-nav {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 18px;
+  gap: clamp(12px, 1.6vw, 24px);
+  margin-left: auto;
 }
+
+/* Home and About links. */
 
 .nav-home,
 .nav-link {
-  padding: 12px 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 0;
   color: var(--deep-green);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 800;
+  white-space: nowrap;
   transition: color 0.2s ease;
 }
 
@@ -163,19 +182,32 @@ h3 {
   color: var(--light-green);
 }
 
+.nav-external {
+  color: var(--light-green);
+  font-size: 15px;
+}
+
+/* PRODUCE GROUP */
+
 .nav-produce {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 3px;
+  gap: 2px;
+  padding: 7px 9px 7px 12px;
+  border: 1px solid rgba(0, 58, 31, 0.1);
+  border-radius: 18px;
+  background: #f8faf6;
 }
 
 .nav-section-label {
-  margin-right: 6px;
+  align-self: center;
+  margin-right: 5px;
   color: var(--light-green);
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 900;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
 }
 
 .nav-dropdown {
@@ -186,24 +218,37 @@ h3 {
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
-  padding: 12px 9px;
+  gap: 7px;
+  min-height: 40px;
+  padding: 9px 9px;
   border: 0;
+  border-radius: 11px;
   background: transparent;
   color: var(--deep-green);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 800;
+  white-space: nowrap;
   cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .dropdown-toggle:hover,
 .dropdown-toggle[aria-expanded="true"] {
-  color: var(--light-green);
+  background: var(--soft-green);
+  color: var(--deep-green);
 }
 
 .dropdown-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: rgba(67, 176, 42, 0.12);
   color: var(--light-green);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1;
   transition: transform 0.2s ease;
@@ -213,22 +258,32 @@ h3 {
   transform: rotate(45deg);
 }
 
+/* Dropdown panels */
+
 .dropdown-menu {
   position: absolute;
   top: calc(100% + 12px);
   left: 0;
+  z-index: 1005;
   display: none;
-  min-width: 215px;
+  min-width: 220px;
   padding: 10px;
-  background: var(--white);
   border: 1px solid rgba(0, 58, 31, 0.08);
   border-radius: 18px;
+  background: var(--white);
   box-shadow: var(--shadow);
 }
 
 .nav-dropdown.open .dropdown-menu {
   display: block;
   animation: menuDrop 0.2s ease both;
+}
+
+/* Prevent the last dropdown from overflowing the right edge. */
+
+.nav-dropdown:last-child .dropdown-menu {
+  right: 0;
+  left: auto;
 }
 
 .dropdown-menu a {
@@ -238,25 +293,35 @@ h3 {
   color: var(--deep-green);
   font-size: 13px;
   font-weight: 700;
-  transition: background 0.2s ease;
+  line-height: 1.4;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .dropdown-menu a:hover {
   background: var(--soft-green);
+  color: var(--deep-green);
 }
+
+/* Contact button */
 
 .nav-contact {
   display: inline-flex;
   align-items: center;
-  gap: 13px;
-  padding: 14px 20px;
+  justify-content: center;
+  gap: 12px;
+  min-height: 46px;
+  padding: 13px 19px;
   border-radius: 100px;
   background: var(--deep-green);
   color: var(--white);
   font-size: 12px;
   font-weight: 800;
   white-space: nowrap;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .nav-contact span {
@@ -268,6 +333,8 @@ h3 {
   background: var(--light-green);
   transform: translateY(-2px);
 }
+
+/* Mobile button is hidden on desktop. */
 
 .menu-toggle {
   display: none;
@@ -560,8 +627,7 @@ h3 {
   line-height: 1.8;
 }
 
-
-/* Asymmetrical triangular card composition */
+/* Three-card asymmetric composition */
 
 .produce-cluster {
   position: relative;
@@ -1008,33 +1074,52 @@ h3 {
 
 
 /* =========================================
-   RESPONSIVE NAVIGATION AND LAYOUT
+   MEDIUM DESKTOP
 ========================================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) and (min-width: 901px) {
   .site-header {
-    padding-right: 4%;
-    padding-left: 4%;
     gap: 15px;
+    padding-right: 3%;
+    padding-left: 3%;
+  }
+
+  .brand-name {
+    font-size: 26px;
   }
 
   .main-nav {
-    gap: 9px;
+    gap: 10px;
   }
 
   .nav-home,
-  .nav-link,
-  .dropdown-toggle {
-    font-size: 12px;
+  .nav-link {
+    font-size: 11px;
   }
 
-  .nav-contact {
-    padding: 13px 15px;
+  .nav-produce {
+    gap: 0;
+    padding-right: 5px;
+    padding-left: 7px;
   }
 
   .nav-section-label {
-    font-size: 9px;
-    letter-spacing: 1.5px;
+    margin-right: 2px;
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .dropdown-toggle {
+    gap: 4px;
+    padding-right: 6px;
+    padding-left: 6px;
+    font-size: 11px;
+  }
+
+  .nav-contact {
+    gap: 7px;
+    padding: 12px 14px;
+    font-size: 11px;
   }
 
   .produce-cluster {
@@ -1047,13 +1132,20 @@ h3 {
 }
 
 
+/* =========================================
+   TABLET AND MOBILE NAVIGATION
+========================================= */
+
 @media (max-width: 900px) {
   .site-header {
     min-height: 78px;
+    padding: 15px 5%;
+    gap: 15px;
   }
 
   .menu-toggle {
     display: flex;
+    flex-shrink: 0;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -1089,8 +1181,10 @@ h3 {
     left: 0;
     display: none;
     align-items: stretch;
-    max-height: calc(100vh - 78px);
-    padding: 20px 6% 35px;
+    gap: 4px;
+    max-height: calc(100dvh - 78px);
+    padding: 20px 5% 35px;
+    overflow-x: hidden;
     overflow-y: auto;
     background: var(--white);
     border-top: 1px solid rgba(0, 58, 31, 0.08);
@@ -1100,35 +1194,39 @@ h3 {
   .main-nav.open {
     display: flex;
     flex-direction: column;
-    gap: 4px;
   }
 
   .nav-home,
   .nav-link {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 16px 10px;
     font-size: 15px;
   }
+
+  /* Produce is a distinct navigation group. */
 
   .nav-produce {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    padding: 14px 0;
-    border-top: 1px solid rgba(0, 58, 31, 0.1);
-    border-bottom: 1px solid rgba(0, 58, 31, 0.1);
+    padding: 14px 10px;
+    border: 1px solid rgba(0, 58, 31, 0.1);
+    border-radius: 20px;
+    background: #f8faf6;
   }
 
   .nav-section-label {
     margin: 0 10px 10px;
-    font-size: 11px;
-    letter-spacing: 2.5px;
+    font-size: 10px;
+    letter-spacing: 2px;
   }
 
   .nav-dropdown {
     width: 100%;
-    border-bottom: 1px solid rgba(0, 58, 31, 0.08);
+    border-bottom: 1px solid rgba(0, 58, 31, 0.09);
   }
 
   .nav-dropdown:last-child {
@@ -1136,30 +1234,45 @@ h3 {
   }
 
   .dropdown-toggle {
+    display: flex;
     width: 100%;
-    padding: 16px 10px;
+    min-height: 49px;
+    padding: 14px 10px;
+    border-radius: 10px;
     font-size: 15px;
     text-align: left;
+  }
+
+  .dropdown-icon {
+    width: 22px;
+    height: 22px;
+    font-size: 18px;
   }
 
   .dropdown-menu {
     position: static;
     min-width: 0;
-    padding: 0 10px 12px 18px;
+    padding: 0 8px 12px 15px;
     border: 0;
     border-radius: 0;
-    background: var(--white);
+    background: transparent;
     box-shadow: none;
+  }
+
+  .nav-dropdown:last-child .dropdown-menu {
+    right: auto;
+    left: auto;
   }
 
   .dropdown-menu a {
     padding: 13px;
+    border-radius: 10px;
     font-size: 14px;
   }
 
   .nav-contact {
     justify-content: center;
-    margin-top: 14px;
+    margin-top: 12px;
     padding: 17px 22px;
     font-size: 14px;
   }
@@ -1285,23 +1398,43 @@ h3 {
     font-size: 13px;
   }
 
-  /* Cards become a compact, overlapping-style mobile sequence */
+  /*
+    Preserve the grouped three-card composition on mobile.
+    Vegetables spans the top.
+    Poultry and rice sit side-by-side underneath.
+  */
+
   .produce-cluster {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: 300px 230px;
+    gap: 14px;
   }
 
   .produce-card {
     width: 100%;
-    height: 320px;
-    min-height: 320px;
-    border-radius: 28px;
+    min-width: 0;
+    min-height: 0;
+    height: auto;
+    border-radius: 24px;
   }
 
-  .vegetables-card,
-  .poultry-card,
+  .vegetables-card {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    transform: none;
+  }
+
+  .poultry-card {
+    grid-column: 1;
+    grid-row: 2;
+    transform: none;
+  }
+
   .rice-card {
+    grid-column: 2;
+    grid-row: 2;
+    min-height: 0;
     transform: none;
   }
 
@@ -1310,22 +1443,56 @@ h3 {
   }
 
   .card-content {
+    right: 15px;
+    bottom: 18px;
+    left: 15px;
+  }
+
+  .vegetables-card .card-content {
     right: 22px;
     bottom: 23px;
     left: 22px;
   }
 
+  .card-category {
+    font-size: 8px;
+    letter-spacing: 1.2px;
+  }
+
   .card-content h3 {
+    font-size: clamp(24px, 7vw, 36px);
+  }
+
+  .vegetables-card .card-content h3 {
     font-size: 39px;
   }
 
   .card-content p {
-    font-size: 12px;
+    margin-bottom: 12px;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .card-link {
+    gap: 8px;
+    font-size: 10px;
+  }
+
+  .card-link > span {
+    flex-shrink: 0;
+    width: 25px;
+    height: 25px;
   }
 
   .card-number {
-    top: 19px;
-    left: 20px;
+    top: 15px;
+    left: 15px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .rice-card .card-content h3 {
+    font-size: 31px;
   }
 
   .sustainability {
@@ -1412,7 +1579,76 @@ h3 {
 }
 
 
-/* Accessibility: respect reduced motion preferences */
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .site-header {
+    padding-right: 4%;
+    padding-left: 4%;
+  }
+
+  .brand {
+    gap: 7px;
+  }
+
+  .brand-name {
+    font-size: 25px;
+  }
+
+  .menu-toggle {
+    width: 43px;
+    height: 43px;
+  }
+
+  .produce-cluster {
+    grid-template-rows: 270px 215px;
+    gap: 10px;
+  }
+
+  .produce-card {
+    border-radius: 20px;
+  }
+
+  .card-content {
+    right: 11px;
+    bottom: 14px;
+    left: 11px;
+  }
+
+  .card-category {
+    font-size: 7px;
+    letter-spacing: 0.8px;
+  }
+
+  .card-content h3 {
+    font-size: 25px;
+  }
+
+  .card-content p {
+    font-size: 10px;
+  }
+
+  .card-link {
+    font-size: 9px;
+  }
+
+  .rice-card .card-content h3 {
+    font-size: 28px;
+  }
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--light-green);
+  outline-offset: 4px;
+}
 
 @media (prefers-reduced-motion: reduce) {
   *,
