@@ -30,7 +30,7 @@
       <small>FARM</small>
     </span>
   </a>
-
+<nav class="main-nav" id="mainNav">
   <button class="menu-toggle"
           aria-expanded="false"
           aria-controls="main-nav"
@@ -38,49 +38,42 @@
     <span></span>
     <span></span>
   </button>
+<div class="nav-section">
+  <p class="nav-section-title">PRODUCE</p>
 
-  <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+  <!-- VEGETABLES DROPDOWN -->
+  <div class="nav-dropdown">
+    <button class="dropdown-toggle" type="button"
+            aria-expanded="false">
+      <span>Vegetables</span>
+      <span class="dropdown-arrow">+</span>
+    </button>
 
-    <div class="nav-group">
-      <span class="nav-heading">Produce</span>
-
-      <div class="dropdown">
-        <a href="vegetables.html">Vegetables Overview</a>
-        <a href="vegetables.html#cabbage">Cabbage</a>
-        <a href="vegetables.html#cucumber">Cucumber</a>
-        <a href="vegetables.html#peppers">Peppers</a>
-        <a href="vegetables.html#watermelon">Watermelon</a>
-
-        <a href="poultry.html">Poultry Overview</a>
-        <a href="poultry.html#eggs">Eggs</a>
-        <a href="poultry.html#broilers">Broilers</a>
-      </div>
+    <div class="dropdown-menu">
+      <a href="vegetables.html">All Vegetables</a>
+      <a href="vegetables.html#cabbage">Cabbage</a>
+      <a href="vegetables.html#cucumber">Cucumber</a>
+      <a href="vegetables.html#peppers">Peppers</a>
+      <a href="vegetables.html#watermelon">Watermelon</a>
     </div>
+  </div>
 
-    <div class="nav-group">
-      <a class="nav-link" href="about.html">About Soileva</a>
+  <!-- POULTRY DROPDOWN -->
+  <div class="nav-dropdown">
+    <button class="dropdown-toggle" type="button"
+            aria-expanded="false">
+      <span>Poultry</span>
+      <span class="dropdown-arrow">+</span>
+    </button>
 
-      <div class="dropdown">
-        <a href="about.html">Overview</a>
-        <a href="about.html#history">Our History</a>
-        <a href="about.html#people">Our People</a>
-        <a href="about.html#sustainability">Sustainability</a>
-      </div>
+    <div class="dropdown-menu">
+      <a href="poultry.html">All Poultry</a>
+      <a href="poultry.html#eggs">Eggs</a>
+      <a href="poultry.html#broilers">Broilers</a>
     </div>
-
-    <a class="nav-link" href="farmcare.html">
-      Soileva Farmcare <span class="external">↗</span>
-    </a>
-
-    <a class="nav-contact" href="#contact">
-      Contact us <span>↗</span>
-    </a>
-
-  </nav>
-</header>
-
-
-<main>
+  </div>
+</div>
+  
 
   <!-- HERO CAROUSEL -->
 
