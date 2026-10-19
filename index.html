@@ -209,7 +209,14 @@
 
     /* ========================================
        PRODUCE COLLECTION
-       Organic seed-shaped cards
+       Organic seed-shaped cards with coloured
+       halos around the outside.
+
+       IMPORTANT:
+       The cards remain white.
+       The produce colours surround their
+       organic silhouettes instead of filling
+       the seed-shaped cards themselves.
     ======================================== */
 
     .vegetable-collection {
@@ -239,12 +246,12 @@
 
     .vegetable-card-track {
       display: flex;
-      gap: 28px;
-      padding: 30px 6% 45px;
+      gap: 40px;
+      padding: 42px 7% 55px;
       overflow-x: auto;
       overflow-y: hidden;
       scroll-snap-type: x mandatory;
-      scroll-padding-left: 6%;
+      scroll-padding-left: 7%;
       overscroll-behavior-x: contain;
       scrollbar-width: thin;
       scrollbar-color: #8ab879 #e3ecde;
@@ -266,9 +273,14 @@
     }
 
     /*
-      Each card has a gently irregular seed silhouette.
-      The asymmetrical curves make the collection feel
-      organic rather than like a row of rounded boxes.
+      Organic seed silhouette.
+
+      The white card sits in the centre.
+      Two soft shadows follow its irregular
+      outline to create a coloured outer halo.
+
+      The first halo is stronger.
+      The second halo blends into the section.
     */
 
     .vegetable-card {
@@ -283,12 +295,16 @@
         50% 50% 44% 56% /
         34% 36% 64% 66%;
 
-      background: var(--card-colour, #ffffff);
+      background: #ffffff;
       color: #003a1f;
+
       scroll-snap-align: start;
       isolation: isolate;
 
-      box-shadow: 0 16px 35px rgba(0, 58, 31, 0.09);
+      box-shadow:
+        0 0 0 7px var(--halo-colour, rgba(67, 176, 42, 0.28)),
+        0 0 0 15px var(--halo-soft, rgba(67, 176, 42, 0.10)),
+        0 18px 35px rgba(0, 58, 31, 0.09);
 
       transition:
         transform 0.35s ease,
@@ -297,21 +313,25 @@
 
     .vegetable-card:hover {
       transform: translateY(-8px) rotate(-0.6deg);
-      box-shadow: 0 25px 45px rgba(0, 58, 31, 0.16);
+
+      box-shadow:
+        0 0 0 9px var(--halo-colour, rgba(67, 176, 42, 0.34)),
+        0 0 0 19px var(--halo-soft, rgba(67, 176, 42, 0.13)),
+        0 25px 45px rgba(0, 58, 31, 0.15);
     }
+
+    /*
+      Keep the image area clean.
+      The selected colour is only a fallback
+      behind the image, not a card fill.
+    */
 
     .vegetable-card-image {
       position: relative;
       flex: 0 0 225px;
       height: 225px;
       overflow: hidden;
-      background:
-        radial-gradient(
-          circle at 45% 40%,
-          rgba(255, 255, 255, 0.75),
-          transparent 65%
-        ),
-        var(--card-colour, #e7eee4);
+      background: #f8faf6;
     }
 
     .vegetable-card-image img {
@@ -345,7 +365,7 @@
       height: 37px;
       border: 1px solid rgba(0, 58, 31, 0.15);
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.84);
+      background: rgba(255, 255, 255, 0.90);
       color: #003a1f;
       font-size: 10px;
       font-weight: 900;
@@ -358,11 +378,12 @@
       flex-direction: column;
       align-items: flex-start;
       padding: 23px 29px 36px;
+      background: #ffffff;
     }
 
     .vegetable-card-category {
       margin-bottom: 9px;
-      color: rgba(0, 58, 31, 0.72);
+      color: #53705a;
       font-size: 9px;
       font-weight: 900;
       letter-spacing: 1.3px;
@@ -371,6 +392,7 @@
 
     .vegetable-card h3 {
       margin: 0 0 11px;
+      color: #003a1f;
       font-size: 26px;
       font-weight: 900;
       line-height: 1.1;
@@ -411,93 +433,76 @@
       transform: rotate(45deg);
     }
 
-    /* Card colours */
+    /* ========================================
+       INDIVIDUAL CARD COLOUR HALOS
+
+       These colours surround each seed shape.
+       They do not fill the white card interior.
+    ======================================== */
 
     .card-cabbage-one {
-      --card-colour: #ffffff;
+      --halo-colour: rgba(116, 163, 91, 0.55);
+      --halo-soft: rgba(116, 163, 91, 0.17);
     }
 
     .card-cabbage-two {
-      --card-colour: #A800A8;
-      color: #ffffff;
-    }
-
-    .card-cabbage-two .vegetable-card-category,
-    .card-cabbage-two p {
-      color: rgba(255, 255, 255, 0.94);
-    }
-
-    .card-cabbage-two .vegetable-card-link {
-      color: #ffffff;
-    }
-
-    .card-cabbage-two .vegetable-card-link span {
-      background: #ffffff;
-      color: #A800A8;
+      --halo-colour: rgba(168, 0, 168, 0.52);
+      --halo-soft: rgba(168, 0, 168, 0.16);
     }
 
     .card-cucumber {
-      --card-colour: #43b02a;
-    }
-
-    .card-cucumber .vegetable-card-category,
-    .card-cucumber p {
-      color: #153f18;
+      --halo-colour: rgba(67, 176, 42, 0.55);
+      --halo-soft: rgba(67, 176, 42, 0.17);
     }
 
     .card-pepper {
-      --card-colour: #f4d74e;
+      --halo-colour: rgba(244, 215, 78, 0.75);
+      --halo-soft: rgba(244, 215, 78, 0.24);
     }
 
     .card-watermelon {
-      --card-colour: #01998e;
-      color: #ffffff;
-    }
-
-    .card-watermelon .vegetable-card-category,
-    .card-watermelon p {
-      color: rgba(255, 255, 255, 0.94);
-    }
-
-    .card-watermelon .vegetable-card-link {
-      color: #ffffff;
-    }
-
-    .card-watermelon .vegetable-card-link span {
-      background: #ffffff;
-      color: #01998e;
+      --halo-colour: rgba(1, 153, 142, 0.55);
+      --halo-soft: rgba(1, 153, 142, 0.17);
     }
 
     .card-green-beans {
-      --card-colour: #B3B242;
+      --halo-colour: rgba(179, 178, 66, 0.62);
+      --halo-soft: rgba(179, 178, 66, 0.20);
     }
 
     .card-okra {
-      --card-colour: #CEB8A1;
+      --halo-colour: rgba(206, 184, 161, 0.75);
+      --halo-soft: rgba(206, 184, 161, 0.27);
     }
 
     .card-ugu {
-      --card-colour: #e5f4dc;
+      --halo-colour: rgba(119, 176, 93, 0.55);
+      --halo-soft: rgba(119, 176, 93, 0.17);
     }
 
     .card-tomatoes {
-      --card-colour: #e77b6d;
+      --halo-colour: rgba(231, 123, 109, 0.62);
+      --halo-soft: rgba(231, 123, 109, 0.21);
     }
 
     .card-carrots {
-      --card-colour: #efb078;
+      --halo-colour: rgba(239, 176, 120, 0.72);
+      --halo-soft: rgba(239, 176, 120, 0.24);
     }
 
     .card-spinach {
-      --card-colour: #9fcf8b;
+      --halo-colour: rgba(110, 174, 85, 0.56);
+      --halo-soft: rgba(110, 174, 85, 0.18);
     }
 
     .card-corn {
-      --card-colour: #f0d66d;
+      --halo-colour: rgba(240, 214, 109, 0.78);
+      --halo-soft: rgba(240, 214, 109, 0.27);
     }
 
     .card-melon {
-      --card-colour: #d9e8ae;
+      --halo-colour: rgba(177, 201, 116, 0.65);
+      --halo-soft: rgba(177, 201, 116, 0.22);
     }
 
     /* ========================================
@@ -748,6 +753,10 @@
       .vegetable-card {
         flex-basis: 280px;
       }
+
+      .vegetable-card-track {
+        gap: 36px;
+      }
     }
 
     @media (max-width: 600px) {
@@ -857,9 +866,9 @@
       }
 
       .vegetable-card-track {
-        gap: 20px;
-        padding: 25px 6% 35px;
-        scroll-padding-left: 6%;
+        gap: 32px;
+        padding: 35px 7% 45px;
+        scroll-padding-left: 7%;
       }
 
       .vegetable-card {
