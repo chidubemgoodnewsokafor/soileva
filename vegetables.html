@@ -209,6 +209,14 @@
 
     /* ========================================
        PRODUCE COLLECTION
+       Organic seed-shaped cards with coloured
+       halos around the outside.
+
+       IMPORTANT:
+       The cards remain white.
+       The produce colours surround their
+       organic silhouettes instead of filling
+       the seed-shaped cards themselves.
     ======================================== */
 
     .vegetable-collection {
@@ -238,12 +246,12 @@
 
     .vegetable-card-track {
       display: flex;
-      gap: 28px;
-      padding: 30px 6% 45px;
+      gap: 40px;
+      padding: 42px 7% 55px;
       overflow-x: auto;
       overflow-y: hidden;
       scroll-snap-type: x mandatory;
-      scroll-padding-left: 6%;
+      scroll-padding-left: 7%;
       overscroll-behavior-x: contain;
       scrollbar-width: thin;
       scrollbar-color: #8ab879 #e3ecde;
@@ -264,6 +272,17 @@
       background: #8ab879;
     }
 
+    /*
+      Organic seed silhouette.
+
+      The white card sits in the centre.
+      Two soft shadows follow its irregular
+      outline to create a coloured outer halo.
+
+      The first halo is stronger.
+      The second halo blends into the section.
+    */
+
     .vegetable-card {
       position: relative;
       display: flex;
@@ -271,32 +290,48 @@
       flex-direction: column;
       min-height: 440px;
       overflow: hidden;
-      border-radius: 50% 50% 44% 56% / 34% 36% 64% 66%;
-      background: var(--card-colour, #ffffff);
+
+      border-radius:
+        50% 50% 44% 56% /
+        34% 36% 64% 66%;
+
+      background: #ffffff;
       color: #003a1f;
+
       scroll-snap-align: start;
       isolation: isolate;
-      box-shadow: 0 16px 35px rgba(0, 58, 31, 0.09);
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+      box-shadow:
+        0 0 0 7px var(--halo-colour, rgba(67, 176, 42, 0.28)),
+        0 0 0 15px var(--halo-soft, rgba(67, 176, 42, 0.10)),
+        0 18px 35px rgba(0, 58, 31, 0.09);
+
+      transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
     }
 
     .vegetable-card:hover {
       transform: translateY(-8px) rotate(-0.6deg);
-      box-shadow: 0 25px 45px rgba(0, 58, 31, 0.16);
+
+      box-shadow:
+        0 0 0 9px var(--halo-colour, rgba(67, 176, 42, 0.34)),
+        0 0 0 19px var(--halo-soft, rgba(67, 176, 42, 0.13)),
+        0 25px 45px rgba(0, 58, 31, 0.15);
     }
+
+    /*
+      Keep the image area clean.
+      The selected colour is only a fallback
+      behind the image, not a card fill.
+    */
 
     .vegetable-card-image {
       position: relative;
       flex: 0 0 225px;
       height: 225px;
       overflow: hidden;
-      background:
-        radial-gradient(
-          circle at 45% 40%,
-          rgba(255, 255, 255, 0.75),
-          transparent 65%
-        ),
-        var(--card-colour, #e7eee4);
+      background: #f8faf6;
     }
 
     .vegetable-card-image img {
@@ -330,7 +365,7 @@
       height: 37px;
       border: 1px solid rgba(0, 58, 31, 0.15);
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.84);
+      background: rgba(255, 255, 255, 0.90);
       color: #003a1f;
       font-size: 10px;
       font-weight: 900;
@@ -343,11 +378,12 @@
       flex-direction: column;
       align-items: flex-start;
       padding: 23px 29px 36px;
+      background: #ffffff;
     }
 
     .vegetable-card-category {
       margin-bottom: 9px;
-      color: rgba(0, 58, 31, 0.72);
+      color: #53705a;
       font-size: 9px;
       font-weight: 900;
       letter-spacing: 1.3px;
@@ -356,6 +392,7 @@
 
     .vegetable-card h3 {
       margin: 0 0 11px;
+      color: #003a1f;
       font-size: 26px;
       font-weight: 900;
       line-height: 1.1;
@@ -396,102 +433,76 @@
       transform: rotate(45deg);
     }
 
-    /* CARD COLOURS */
+    /* ========================================
+       INDIVIDUAL CARD COLOUR HALOS
+
+       These colours surround each seed shape.
+       They do not fill the white card interior.
+    ======================================== */
 
     .card-cabbage-one {
-      --card-colour: #ffffff;
+      --halo-colour: rgba(116, 163, 91, 0.55);
+      --halo-soft: rgba(116, 163, 91, 0.17);
     }
 
     .card-cabbage-two {
-      --card-colour: #A800A8;
-      color: #ffffff;
-    }
-
-    .card-cabbage-two .vegetable-card-category,
-    .card-cabbage-two p {
-      color: rgba(255, 255, 255, 0.94);
-    }
-
-    .card-cabbage-two .vegetable-card-link {
-      color: #ffffff;
-    }
-
-    .card-cabbage-two .vegetable-card-link span {
-      background: #ffffff;
-      color: #A800A8;
+      --halo-colour: rgba(168, 0, 168, 0.52);
+      --halo-soft: rgba(168, 0, 168, 0.16);
     }
 
     .card-cucumber {
-      --card-colour: #43b02a;
+      --halo-colour: rgba(67, 176, 42, 0.55);
+      --halo-soft: rgba(67, 176, 42, 0.17);
     }
 
-    .card-cucumber .vegetable-card-category,
-    .card-cucumber p {
-      color: #153f18;
-    }
-
-    .card-bell-pepper {
-      --card-colour: #f4d74e;
-    }
-
-    .card-habanero {
-      --card-colour: #ed8a36;
-    }
-
-    .card-habanero .vegetable-card-category,
-    .card-habanero p {
-      color: #54250b;
+    .card-pepper {
+      --halo-colour: rgba(244, 215, 78, 0.75);
+      --halo-soft: rgba(244, 215, 78, 0.24);
     }
 
     .card-watermelon {
-      --card-colour: #01998e;
-      color: #ffffff;
-    }
-
-    .card-watermelon .vegetable-card-category,
-    .card-watermelon p {
-      color: rgba(255, 255, 255, 0.94);
-    }
-
-    .card-watermelon .vegetable-card-link {
-      color: #ffffff;
-    }
-
-    .card-watermelon .vegetable-card-link span {
-      background: #ffffff;
-      color: #01998e;
+      --halo-colour: rgba(1, 153, 142, 0.55);
+      --halo-soft: rgba(1, 153, 142, 0.17);
     }
 
     .card-green-beans {
-      --card-colour: #B3B242;
+      --halo-colour: rgba(179, 178, 66, 0.62);
+      --halo-soft: rgba(179, 178, 66, 0.20);
     }
 
     .card-okra {
-      --card-colour: #CEB8A1;
+      --halo-colour: rgba(206, 184, 161, 0.75);
+      --halo-soft: rgba(206, 184, 161, 0.27);
     }
 
     .card-ugu {
-      --card-colour: #e5f4dc;
+      --halo-colour: rgba(119, 176, 93, 0.55);
+      --halo-soft: rgba(119, 176, 93, 0.17);
     }
 
     .card-tomatoes {
-      --card-colour: #e77b6d;
+      --halo-colour: rgba(231, 123, 109, 0.62);
+      --halo-soft: rgba(231, 123, 109, 0.21);
     }
 
     .card-carrots {
-      --card-colour: #efb078;
+      --halo-colour: rgba(239, 176, 120, 0.72);
+      --halo-soft: rgba(239, 176, 120, 0.24);
     }
 
     .card-spinach {
-      --card-colour: #9fcf8b;
+      --halo-colour: rgba(110, 174, 85, 0.56);
+      --halo-soft: rgba(110, 174, 85, 0.18);
     }
 
     .card-corn {
-      --card-colour: #f0d66d;
+      --halo-colour: rgba(240, 214, 109, 0.78);
+      --halo-soft: rgba(240, 214, 109, 0.27);
     }
 
     .card-melon {
-      --card-colour: #d9e8ae;
+      --halo-colour: rgba(177, 201, 116, 0.65);
+      --halo-soft: rgba(177, 201, 116, 0.22);
     }
 
     /* ========================================
@@ -627,7 +638,7 @@
       color: #43b02a;
     }
 
-    /* DETAIL COLOURS */
+    /* Detail colours */
 
     #cabbage {
       --detail-colour: #f8f8f8;
@@ -641,12 +652,8 @@
       --detail-colour: #43b02a;
     }
 
-    #bell-pepper {
+    #peppers {
       --detail-colour: #f4d74e;
-    }
-
-    #habanero {
-      --detail-colour: #ed8a36;
     }
 
     #watermelon {
@@ -745,6 +752,10 @@
 
       .vegetable-card {
         flex-basis: 280px;
+      }
+
+      .vegetable-card-track {
+        gap: 36px;
       }
     }
 
@@ -855,9 +866,9 @@
       }
 
       .vegetable-card-track {
-        gap: 20px;
-        padding: 25px 6% 35px;
-        scroll-padding-left: 6%;
+        gap: 32px;
+        padding: 35px 7% 45px;
+        scroll-padding-left: 7%;
       }
 
       .vegetable-card {
@@ -998,20 +1009,11 @@
 
           <div class="dropdown-menu" id="vegetablesDropdown">
             <a href="vegetables.html">All Vegetables</a>
-            <a href="vegetables.html#cabbage">Green Cabbage</a>
+            <a href="vegetables.html#cabbage">Cabbage</a>
             <a href="vegetables.html#cabbage-purple">Red Cabbage</a>
             <a href="vegetables.html#cucumber">Cucumber</a>
-            <a href="vegetables.html#bell-pepper">Bell Pepper</a>
-            <a href="vegetables.html#habanero">Habanero Pepper</a>
+            <a href="vegetables.html#peppers">Peppers</a>
             <a href="vegetables.html#watermelon">Watermelon</a>
-            <a href="vegetables.html#green-beans">Green Beans</a>
-            <a href="vegetables.html#okra">Okra</a>
-            <a href="vegetables.html#ugu">Ugu</a>
-            <a href="vegetables.html#tomatoes">Tomatoes</a>
-            <a href="vegetables.html#carrots">Carrots</a>
-            <a href="vegetables.html#spinach">Spinach</a>
-            <a href="vegetables.html#corn">Sweet Corn</a>
-            <a href="vegetables.html#melon">Melon</a>
           </div>
         </div>
 
@@ -1175,6 +1177,7 @@
         <!-- 01: GREEN CABBAGE -->
 
         <a href="#cabbage" class="vegetable-card card-cabbage-one">
+
           <div class="vegetable-card-image">
             <img src="images/cabbage.jpg"
                  alt="Fresh green cabbage"
@@ -1184,15 +1187,17 @@
 
           <div class="vegetable-card-body">
             <span class="vegetable-card-category">CRUCIFEROUS VEGETABLE</span>
-            <h3>Green Cabbage</h3>
+            <h3>Cabbage</h3>
             <p>A crisp, versatile vegetable containing fibre and vitamin C.</p>
             <span class="vegetable-card-link">Explore cabbage <span>↗</span></span>
           </div>
+
         </a>
 
         <!-- 02: RED CABBAGE -->
 
         <a href="#cabbage-purple" class="vegetable-card card-cabbage-two">
+
           <div class="vegetable-card-image">
             <img src="images/cabbage-purple.jpg"
                  alt="Fresh red cabbage with deep purple-red leaves"
@@ -1206,11 +1211,13 @@
             <p>Deep purple-red leaves contain anthocyanins, colourful plant pigments with antioxidant activity.</p>
             <span class="vegetable-card-link">Explore red cabbage <span>↗</span></span>
           </div>
+
         </a>
 
         <!-- 03: CUCUMBER -->
 
         <a href="#cucumber" class="vegetable-card card-cucumber">
+
           <div class="vegetable-card-image">
             <img src="images/cucumber.jpg"
                  alt="Fresh cucumber"
@@ -1224,52 +1231,38 @@
             <p>Water-rich cucumber adds freshness and crunch to meals.</p>
             <span class="vegetable-card-link">Explore cucumber <span>↗</span></span>
           </div>
+
         </a>
 
-        <!-- 04: BELL PEPPER -->
+        <!-- 04: PEPPER -->
 
-        <a href="#bell-pepper" class="vegetable-card card-bell-pepper">
+        <a href="#peppers" class="vegetable-card card-pepper">
+
           <div class="vegetable-card-image">
-            <img src="images/bell-pepper.jpg"
-                 alt="Fresh colourful bell peppers"
+            <img src="images/pepper.jpg"
+                 alt="Fresh peppers"
                  loading="lazy">
             <span class="vegetable-card-number">04</span>
           </div>
 
           <div class="vegetable-card-body">
-            <span class="vegetable-card-category">SWEET & CRISP</span>
-            <h3>Bell Pepper</h3>
-            <p>Mild, colourful and crisp, bell peppers bring sweetness and freshness to everyday meals.</p>
-            <span class="vegetable-card-link">Explore bell peppers <span>↗</span></span>
+            <span class="vegetable-card-category">FLAVOUR & COLOUR</span>
+            <h3>Pepper</h3>
+            <p>A kitchen essential for adding flavour, colour and heat.</p>
+            <span class="vegetable-card-link">Explore peppers <span>↗</span></span>
           </div>
+
         </a>
 
-        <!-- 05: HABANERO PEPPER -->
-
-        <a href="#habanero" class="vegetable-card card-habanero">
-          <div class="vegetable-card-image">
-            <img src="images/habanero-pepper.jpg"
-                 alt="Fresh orange and red habanero peppers"
-                 loading="lazy">
-            <span class="vegetable-card-number">05</span>
-          </div>
-
-          <div class="vegetable-card-body">
-            <span class="vegetable-card-category">INTENSE HEAT & FLAVOUR</span>
-            <h3>Habanero Pepper</h3>
-            <p>Small but intensely hot, habanero peppers add a distinctive aroma and fiery kick to meals.</p>
-            <span class="vegetable-card-link">Explore habanero <span>↗</span></span>
-          </div>
-        </a>
-
-        <!-- 06: WATERMELON -->
+        <!-- 05: WATERMELON -->
 
         <a href="#watermelon" class="vegetable-card card-watermelon">
+
           <div class="vegetable-card-image">
             <img src="images/watermelon.jpg"
                  alt="Fresh watermelon"
                  loading="lazy">
-            <span class="vegetable-card-number">06</span>
+            <span class="vegetable-card-number">05</span>
           </div>
 
           <div class="vegetable-card-body">
@@ -1278,16 +1271,18 @@
             <p>A refreshing fruit with high water content and lycopene.</p>
             <span class="vegetable-card-link">Explore watermelon <span>↗</span></span>
           </div>
+
         </a>
 
-        <!-- 07: GREEN BEANS -->
+        <!-- 06: GREEN BEANS -->
 
         <a href="#green-beans" class="vegetable-card card-green-beans">
+
           <div class="vegetable-card-image">
             <img src="images/green-beans.jpg"
                  alt="Fresh green beans"
                  loading="lazy">
-            <span class="vegetable-card-number">07</span>
+            <span class="vegetable-card-number">06</span>
           </div>
 
           <div class="vegetable-card-body">
@@ -1296,16 +1291,18 @@
             <p>A versatile vegetable for sides, stir-fries and mixed dishes.</p>
             <span class="vegetable-card-link">Explore green beans <span>↗</span></span>
           </div>
+
         </a>
 
-        <!-- 08: OKRA -->
+        <!-- 07: OKRA -->
 
         <a href="#okra" class="vegetable-card card-okra">
+
           <div class="vegetable-card-image">
             <img src="images/okra.jpg"
                  alt="Fresh okra pods"
                  loading="lazy">
-            <span class="vegetable-card-number">08</span>
+            <span class="vegetable-card-number">07</span>
           </div>
 
           <div class="vegetable-card-body">
@@ -1314,16 +1311,18 @@
             <p>Known for its fibre and its useful texture in soups and stews.</p>
             <span class="vegetable-card-link">Explore okra <span>↗</span></span>
           </div>
+
         </a>
 
-        <!-- 09: UGU -->
+        <!-- 08: UGU -->
 
         <a href="#ugu" class="vegetable-card card-ugu">
+
           <div class="vegetable-card-image">
             <img src="images/ugu.jpg"
                  alt="Fresh ugu leaves"
                  loading="lazy">
-            <span class="vegetable-card-number">09</span>
+            <span class="vegetable-card-number">08</span>
           </div>
 
           <div class="vegetable-card-body">
@@ -1332,16 +1331,18 @@
             <p>A popular leafy vegetable used in many Nigerian dishes.</p>
             <span class="vegetable-card-link">Explore ugu <span>↗</span></span>
           </div>
+
         </a>
 
-        <!-- 10: TOMATOES -->
+        <!-- 09: TOMATOES -->
 
         <a href="#tomatoes" class="vegetable-card card-tomatoes">
+
           <div class="vegetable-card-image">
             <img src="images/tomatoes.jpg"
                  alt="Fresh tomatoes"
                  loading="lazy">
-            <span class="vegetable-card-number">10</span>
+            <span class="vegetable-card-number">09</span>
           </div>
 
           <div class="vegetable-card-body">
@@ -1350,16 +1351,18 @@
             <p>A source of vitamin C and lycopene, used in countless dishes.</p>
             <span class="vegetable-card-link">Explore tomatoes <span>↗</span></span>
           </div>
+
         </a>
 
-        <!-- 11: CARROTS -->
+        <!-- 10: CARROTS -->
 
         <a href="#carrots" class="vegetable-card card-carrots">
+
           <div class="vegetable-card-image">
             <img src="images/carrots.jpg"
                  alt="Fresh carrots"
                  loading="lazy">
-            <span class="vegetable-card-number">11</span>
+            <span class="vegetable-card-number">10</span>
           </div>
 
           <div class="vegetable-card-body">
@@ -1368,16 +1371,18 @@
             <p>Rich in beta-carotene, which the body can convert to vitamin A.</p>
             <span class="vegetable-card-link">Explore carrots <span>↗</span></span>
           </div>
+
         </a>
 
-        <!-- 12: SPINACH -->
+        <!-- 11: SPINACH -->
 
         <a href="#spinach" class="vegetable-card card-spinach">
+
           <div class="vegetable-card-image">
             <img src="images/spinach.jpg"
                  alt="Fresh spinach leaves"
                  loading="lazy">
-            <span class="vegetable-card-number">12</span>
+            <span class="vegetable-card-number">11</span>
           </div>
 
           <div class="vegetable-card-body">
@@ -1386,16 +1391,18 @@
             <p>A leafy vegetable containing folate, vitamin K and other nutrients.</p>
             <span class="vegetable-card-link">Explore spinach <span>↗</span></span>
           </div>
+
         </a>
 
-        <!-- 13: SWEET CORN -->
+        <!-- 12: SWEET CORN -->
 
         <a href="#corn" class="vegetable-card card-corn">
+
           <div class="vegetable-card-image">
             <img src="images/sweet-corn.jpg"
                  alt="Fresh sweet corn"
                  loading="lazy">
-            <span class="vegetable-card-number">13</span>
+            <span class="vegetable-card-number">12</span>
           </div>
 
           <div class="vegetable-card-body">
@@ -1404,16 +1411,18 @@
             <p>Provides carbohydrates and fibre for everyday meals.</p>
             <span class="vegetable-card-link">Explore sweet corn <span>↗</span></span>
           </div>
+
         </a>
 
-        <!-- 14: MELON -->
+        <!-- 13: MELON -->
 
         <a href="#melon" class="vegetable-card card-melon">
+
           <div class="vegetable-card-image">
             <img src="images/melon.jpg"
                  alt="Fresh melon"
                  loading="lazy">
-            <span class="vegetable-card-number">14</span>
+            <span class="vegetable-card-number">13</span>
           </div>
 
           <div class="vegetable-card-body">
@@ -1422,6 +1431,7 @@
             <p>Melon varieties are used in refreshing fruit dishes and traditional cooking.</p>
             <span class="vegetable-card-link">Explore melon <span>↗</span></span>
           </div>
+
         </a>
 
       </div>
@@ -1436,6 +1446,7 @@
       <!-- 01: GREEN CABBAGE -->
 
       <article class="produce-detail" id="cabbage">
+
         <div class="produce-detail-image">
           <img src="images/cabbage.jpg"
                alt="Fresh green cabbage"
@@ -1443,7 +1454,8 @@
         </div>
 
         <div class="produce-detail-copy">
-          <span class="eyebrow">01 / GREEN CABBAGE</span>
+          <span class="eyebrow">01 / CABBAGE</span>
+
           <h2>Fresh, crisp cabbage.</h2>
 
           <p>
@@ -1453,6 +1465,7 @@
           </p>
 
           <h3 class="benefit-heading">Nutritional benefits</h3>
+
           <ul class="benefit-list">
             <li>Provides vitamin C</li>
             <li>Contains dietary fibre</li>
@@ -1461,6 +1474,7 @@
           </ul>
 
           <h3 class="benefit-heading">How to use it</h3>
+
           <p>
             Slice it into salads, lightly cook it with other vegetables,
             or add it to soups and stews. Wash thoroughly before use.
@@ -1470,16 +1484,19 @@
             <a href="#contact" class="button button-green">
               Contact us to order <span>↗</span>
             </a>
+
             <a href="#all-vegetables" class="back-to-collection">
               ↑ See other fruits & vegetables
             </a>
           </div>
         </div>
+
       </article>
 
       <!-- 02: RED CABBAGE -->
 
       <article class="produce-detail" id="cabbage-purple">
+
         <div class="produce-detail-image">
           <img src="images/cabbage-purple.jpg"
                alt="Fresh red cabbage with deep purple-red leaves"
@@ -1488,6 +1505,7 @@
 
         <div class="produce-detail-copy">
           <span class="eyebrow">02 / RED CABBAGE</span>
+
           <h2>Bold colour. Valuable nutrition.</h2>
 
           <p>
@@ -1498,6 +1516,7 @@
           </p>
 
           <h3 class="benefit-heading">Nutritional benefits</h3>
+
           <ul class="benefit-list">
             <li>Contains anthocyanins with antioxidant activity</li>
             <li>Provides vitamin C</li>
@@ -1506,6 +1525,7 @@
           </ul>
 
           <h3 class="benefit-heading">How to use it</h3>
+
           <p>
             Shred it into fresh salads and slaws, combine it with
             other vegetables, or lightly cook it as a colourful
@@ -1516,16 +1536,19 @@
             <a href="#contact" class="button button-green">
               Contact us to order <span>↗</span>
             </a>
+
             <a href="#all-vegetables" class="back-to-collection">
               ↑ See other fruits & vegetables
             </a>
           </div>
         </div>
+
       </article>
 
       <!-- 03: CUCUMBER -->
 
       <article class="produce-detail" id="cucumber">
+
         <div class="produce-detail-image">
           <img src="images/cucumber.jpg"
                alt="Fresh cucumber"
@@ -1534,6 +1557,7 @@
 
         <div class="produce-detail-copy">
           <span class="eyebrow">03 / CUCUMBER</span>
+
           <h2>Cool, crisp cucumber.</h2>
 
           <p>
@@ -1543,6 +1567,7 @@
           </p>
 
           <h3 class="benefit-heading">Nutritional benefits</h3>
+
           <ul class="benefit-list">
             <li>High water content</li>
             <li>Provides some vitamin K</li>
@@ -1551,6 +1576,7 @@
           </ul>
 
           <h3 class="benefit-heading">How to use it</h3>
+
           <p>
             Wash well and slice into salads, serve as a fresh snack,
             or combine with tomatoes and leafy vegetables.
@@ -1560,108 +1586,69 @@
             <a href="#contact" class="button button-green">
               Contact us to order <span>↗</span>
             </a>
+
             <a href="#all-vegetables" class="back-to-collection">
               ↑ See other fruits & vegetables
             </a>
           </div>
         </div>
+
       </article>
 
-      <!-- 04: BELL PEPPER -->
+      <!-- 04: PEPPERS -->
 
-      <article class="produce-detail" id="bell-pepper">
+      <article class="produce-detail" id="peppers">
+
         <div class="produce-detail-image">
-          <img src="images/bell-pepper.jpg"
-               alt="Fresh red, yellow and green bell peppers"
+          <img src="images/pepper.jpg"
+               alt="Fresh peppers"
                loading="lazy">
         </div>
 
         <div class="produce-detail-copy">
-          <span class="eyebrow">04 / BELL PEPPER</span>
-          <h2>Colourful, crisp and naturally sweet.</h2>
+          <span class="eyebrow">04 / PEPPERS</span>
+
+          <h2>Bring flavour to the table.</h2>
 
           <p>
-            Bell peppers are known for their crisp texture, mild
-            flavour and vibrant colours. Unlike hot peppers, they
-            are not characteristically spicy. They bring colour,
-            freshness and versatility to a wide range of meals.
+            Peppers are important ingredients in many Nigerian
+            kitchens. Different varieties offer different levels
+            of heat, flavour and colour.
           </p>
 
           <h3 class="benefit-heading">Nutritional benefits</h3>
+
           <ul class="benefit-list">
-            <li>Rich in vitamin C, especially when raw</li>
-            <li>Red varieties provide beta-carotene</li>
+            <li>Many varieties provide vitamin C</li>
             <li>Contain beneficial plant compounds</li>
-            <li>Low in calories</li>
+            <li>Add flavour without much energy</li>
+            <li>Help bring variety to meals</li>
           </ul>
 
           <h3 class="benefit-heading">How to use it</h3>
+
           <p>
-            Slice into salads, add to stir-fries, combine with
-            onions and tomatoes, or use in rice dishes, sauces
-            and roasted vegetable meals.
+            Blend into sauces, add to stews, include in vegetable
+            dishes, or use to season soups and other meals.
           </p>
 
           <div class="produce-detail-actions">
             <a href="#contact" class="button button-green">
               Contact us to order <span>↗</span>
             </a>
+
             <a href="#all-vegetables" class="back-to-collection">
               ↑ See other fruits & vegetables
             </a>
           </div>
         </div>
+
       </article>
 
-      <!-- 05: HABANERO PEPPER -->
-
-      <article class="produce-detail" id="habanero">
-        <div class="produce-detail-image">
-          <img src="images/habanero-pepper.jpg"
-               alt="Fresh orange and red habanero peppers"
-               loading="lazy">
-        </div>
-
-        <div class="produce-detail-copy">
-          <span class="eyebrow">05 / HABANERO PEPPER</span>
-          <h2>Small pepper. Serious heat.</h2>
-
-          <p>
-            Habanero peppers are recognised for their intense heat,
-            fruity aroma and distinctive flavour. They are much
-            hotter than bell peppers, so a small quantity can make
-            a noticeable difference to a dish.
-          </p>
-
-          <h3 class="benefit-heading">Nutritional benefits</h3>
-          <ul class="benefit-list">
-            <li>Provides vitamin C</li>
-            <li>Contains capsaicin, the compound responsible for its heat</li>
-            <li>Contains beneficial plant compounds</li>
-            <li>Adds intense flavour in small quantities</li>
-          </ul>
-
-          <h3 class="benefit-heading">How to use it</h3>
-          <p>
-            Use sparingly in pepper sauces, stews, marinades and
-            seasoning blends. Handle carefully, avoid touching
-            your eyes, and wash your hands after preparing hot peppers.
-          </p>
-
-          <div class="produce-detail-actions">
-            <a href="#contact" class="button button-green">
-              Contact us to order <span>↗</span>
-            </a>
-            <a href="#all-vegetables" class="back-to-collection">
-              ↑ See other fruits & vegetables
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- 06: WATERMELON -->
+      <!-- 05: WATERMELON -->
 
       <article class="produce-detail" id="watermelon">
+
         <div class="produce-detail-image">
           <img src="images/watermelon.jpg"
                alt="Fresh watermelon"
@@ -1669,7 +1656,8 @@
         </div>
 
         <div class="produce-detail-copy">
-          <span class="eyebrow">06 / WATERMELON</span>
+          <span class="eyebrow">05 / WATERMELON</span>
+
           <h2>Refreshingly sweet watermelon.</h2>
 
           <p>
@@ -1679,6 +1667,7 @@
           </p>
 
           <h3 class="benefit-heading">Nutritional benefits</h3>
+
           <ul class="benefit-list">
             <li>Supports hydration through its water content</li>
             <li>Contains lycopene</li>
@@ -1687,6 +1676,7 @@
           </ul>
 
           <h3 class="benefit-heading">How to use it</h3>
+
           <p>
             Enjoy fresh slices, add to fruit platters, or blend
             into a refreshing drink without excessive added sugar.
@@ -1696,16 +1686,19 @@
             <a href="#contact" class="button button-green">
               Contact us to order <span>↗</span>
             </a>
+
             <a href="#all-vegetables" class="back-to-collection">
               ↑ See other fruits & vegetables
             </a>
           </div>
         </div>
+
       </article>
 
-      <!-- 07: GREEN BEANS -->
+      <!-- 06: GREEN BEANS -->
 
       <article class="produce-detail" id="green-beans">
+
         <div class="produce-detail-image">
           <img src="images/green-beans.jpg"
                alt="Fresh green beans"
@@ -1713,7 +1706,8 @@
         </div>
 
         <div class="produce-detail-copy">
-          <span class="eyebrow">07 / GREEN BEANS</span>
+          <span class="eyebrow">06 / GREEN BEANS</span>
+
           <h2>Green beans, full of possibilities.</h2>
 
           <p>
@@ -1723,6 +1717,7 @@
           </p>
 
           <h3 class="benefit-heading">Nutritional benefits</h3>
+
           <ul class="benefit-list">
             <li>Provides dietary fibre</li>
             <li>Contains folate</li>
@@ -1731,6 +1726,7 @@
           </ul>
 
           <h3 class="benefit-heading">How to use it</h3>
+
           <p>
             Steam, boil or lightly sauté until tender. Add to rice
             dishes, stir-fries, vegetable sides and stews.
@@ -1740,16 +1736,19 @@
             <a href="#contact" class="button button-green">
               Contact us to order <span>↗</span>
             </a>
+
             <a href="#all-vegetables" class="back-to-collection">
               ↑ See other fruits & vegetables
             </a>
           </div>
         </div>
+
       </article>
 
-      <!-- 08: OKRA -->
+      <!-- 07: OKRA -->
 
       <article class="produce-detail" id="okra">
+
         <div class="produce-detail-image">
           <img src="images/okra.jpg"
                alt="Fresh okra pods"
@@ -1757,7 +1756,8 @@
         </div>
 
         <div class="produce-detail-copy">
-          <span class="eyebrow">08 / OKRA</span>
+          <span class="eyebrow">07 / OKRA</span>
+
           <h2>A favourite for soups and stews.</h2>
 
           <p>
@@ -1767,6 +1767,7 @@
           </p>
 
           <h3 class="benefit-heading">Nutritional benefits</h3>
+
           <ul class="benefit-list">
             <li>Contains dietary fibre</li>
             <li>Provides folate</li>
@@ -1775,6 +1776,7 @@
           </ul>
 
           <h3 class="benefit-heading">How to use it</h3>
+
           <p>
             Use in okra soup, combine with other vegetables, or
             cook with fish and other preferred ingredients.
@@ -1784,16 +1786,19 @@
             <a href="#contact" class="button button-green">
               Contact us to order <span>↗</span>
             </a>
+
             <a href="#all-vegetables" class="back-to-collection">
               ↑ See other fruits & vegetables
             </a>
           </div>
         </div>
+
       </article>
 
-      <!-- 09: UGU -->
+      <!-- 08: UGU -->
 
       <article class="produce-detail" id="ugu">
+
         <div class="produce-detail-image">
           <img src="images/ugu.jpg"
                alt="Fresh ugu leaves"
@@ -1801,7 +1806,8 @@
         </div>
 
         <div class="produce-detail-copy">
-          <span class="eyebrow">09 / UGU</span>
+          <span class="eyebrow">08 / UGU</span>
+
           <h2>Leafy goodness for everyday cooking.</h2>
 
           <p>
@@ -1811,6 +1817,7 @@
           </p>
 
           <h3 class="benefit-heading">Nutritional benefits</h3>
+
           <ul class="benefit-list">
             <li>Contains beta-carotene</li>
             <li>Provides folate</li>
@@ -1819,6 +1826,7 @@
           </ul>
 
           <h3 class="benefit-heading">How to use it</h3>
+
           <p>
             Wash thoroughly, slice and add to soups or vegetable
             sauces. Avoid prolonged cooking when possible to help
@@ -1829,16 +1837,19 @@
             <a href="#contact" class="button button-green">
               Contact us to order <span>↗</span>
             </a>
+
             <a href="#all-vegetables" class="back-to-collection">
               ↑ See other fruits & vegetables
             </a>
           </div>
         </div>
+
       </article>
 
-      <!-- 10: TOMATOES -->
+      <!-- 09: TOMATOES -->
 
       <article class="produce-detail" id="tomatoes">
+
         <div class="produce-detail-image">
           <img src="images/tomatoes.jpg"
                alt="Fresh tomatoes"
@@ -1846,7 +1857,8 @@
         </div>
 
         <div class="produce-detail-copy">
-          <span class="eyebrow">10 / TOMATOES</span>
+          <span class="eyebrow">09 / TOMATOES</span>
+
           <h2>A staple in the kitchen.</h2>
 
           <p>
@@ -1856,6 +1868,7 @@
           </p>
 
           <h3 class="benefit-heading">Nutritional benefits</h3>
+
           <ul class="benefit-list">
             <li>Contains lycopene</li>
             <li>Provides vitamin C</li>
@@ -1864,6 +1877,7 @@
           </ul>
 
           <h3 class="benefit-heading">How to use it</h3>
+
           <p>
             Use fresh in salads, blend for stews, cook into sauces,
             or combine with peppers and onions.
@@ -1873,16 +1887,19 @@
             <a href="#contact" class="button button-green">
               Contact us to order <span>↗</span>
             </a>
+
             <a href="#all-vegetables" class="back-to-collection">
               ↑ See other fruits & vegetables
             </a>
           </div>
         </div>
+
       </article>
 
-      <!-- 11: CARROTS -->
+      <!-- 10: CARROTS -->
 
       <article class="produce-detail" id="carrots">
+
         <div class="produce-detail-image">
           <img src="images/carrots.jpg"
                alt="Fresh carrots"
@@ -1890,7 +1907,8 @@
         </div>
 
         <div class="produce-detail-copy">
-          <span class="eyebrow">11 / CARROTS</span>
+          <span class="eyebrow">10 / CARROTS</span>
+
           <h2>Bright colour, natural crunch.</h2>
 
           <p>
@@ -1900,6 +1918,7 @@
           </p>
 
           <h3 class="benefit-heading">Nutritional benefits</h3>
+
           <ul class="benefit-list">
             <li>Rich in beta-carotene</li>
             <li>Provides dietary fibre</li>
@@ -1908,6 +1927,7 @@
           </ul>
 
           <h3 class="benefit-heading">How to use it</h3>
+
           <p>
             Slice into salads, add to rice and vegetable dishes,
             or cook in soups and stews.
@@ -1917,16 +1937,19 @@
             <a href="#contact" class="button button-green">
               Contact us to order <span>↗</span>
             </a>
+
             <a href="#all-vegetables" class="back-to-collection">
               ↑ See other fruits & vegetables
             </a>
           </div>
         </div>
+
       </article>
 
-      <!-- 12: SPINACH -->
+      <!-- 11: SPINACH -->
 
       <article class="produce-detail" id="spinach">
+
         <div class="produce-detail-image">
           <img src="images/spinach.jpg"
                alt="Fresh spinach leaves"
@@ -1934,7 +1957,8 @@
         </div>
 
         <div class="produce-detail-copy">
-          <span class="eyebrow">12 / SPINACH</span>
+          <span class="eyebrow">11 / SPINACH</span>
+
           <h2>Leafy greens for varied meals.</h2>
 
           <p>
@@ -1944,6 +1968,7 @@
           </p>
 
           <h3 class="benefit-heading">Nutritional benefits</h3>
+
           <ul class="benefit-list">
             <li>Provides folate</li>
             <li>Contains vitamin K</li>
@@ -1952,6 +1977,7 @@
           </ul>
 
           <h3 class="benefit-heading">How to use it</h3>
+
           <p>
             Wash well, then lightly cook or add to soups and
             other vegetable dishes.
@@ -1961,16 +1987,19 @@
             <a href="#contact" class="button button-green">
               Contact us to order <span>↗</span>
             </a>
+
             <a href="#all-vegetables" class="back-to-collection">
               ↑ See other fruits & vegetables
             </a>
           </div>
         </div>
+
       </article>
 
-      <!-- 13: SWEET CORN -->
+      <!-- 12: SWEET CORN -->
 
       <article class="produce-detail" id="corn">
+
         <div class="produce-detail-image">
           <img src="images/sweet-corn.jpg"
                alt="Fresh sweet corn"
@@ -1978,7 +2007,8 @@
         </div>
 
         <div class="produce-detail-copy">
-          <span class="eyebrow">13 / SWEET CORN</span>
+          <span class="eyebrow">12 / SWEET CORN</span>
+
           <h2>A versatile everyday food.</h2>
 
           <p>
@@ -1987,6 +2017,7 @@
           </p>
 
           <h3 class="benefit-heading">Nutritional benefits</h3>
+
           <ul class="benefit-list">
             <li>Provides carbohydrates</li>
             <li>Contains dietary fibre</li>
@@ -1995,6 +2026,7 @@
           </ul>
 
           <h3 class="benefit-heading">How to use it</h3>
+
           <p>
             Boil or steam, add kernels to rice and salads, or
             combine with beans and other vegetables.
@@ -2004,16 +2036,19 @@
             <a href="#contact" class="button button-green">
               Contact us to order <span>↗</span>
             </a>
+
             <a href="#all-vegetables" class="back-to-collection">
               ↑ See other fruits & vegetables
             </a>
           </div>
         </div>
+
       </article>
 
-      <!-- 14: MELON -->
+      <!-- 13: MELON -->
 
       <article class="produce-detail" id="melon">
+
         <div class="produce-detail-image">
           <img src="images/melon.jpg"
                alt="Fresh melon"
@@ -2021,7 +2056,8 @@
         </div>
 
         <div class="produce-detail-copy">
-          <span class="eyebrow">14 / MELON</span>
+          <span class="eyebrow">13 / MELON</span>
+
           <h2>Fruit and food with many uses.</h2>
 
           <p>
@@ -2031,6 +2067,7 @@
           </p>
 
           <h3 class="benefit-heading">Nutritional benefits</h3>
+
           <ul class="benefit-list">
             <li>Benefits vary by melon variety</li>
             <li>Some varieties provide vitamin C</li>
@@ -2039,6 +2076,7 @@
           </ul>
 
           <h3 class="benefit-heading">How to use it</h3>
+
           <p>
             Use according to the variety. Confirm the specific
             melon type before adding detailed product information.
@@ -2048,11 +2086,13 @@
             <a href="#contact" class="button button-green">
               Contact us to order <span>↗</span>
             </a>
+
             <a href="#all-vegetables" class="back-to-collection">
               ↑ See other fruits & vegetables
             </a>
           </div>
         </div>
+
       </article>
 
     </section>
