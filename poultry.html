@@ -494,17 +494,52 @@ content="Explore Soileva Poultry for table eggs, live broiler chickens and proce
       background: #e7f2d9;
     }
 
-    /* CARD COLOUR IDENTITIES */
+    /* ========================================
+       CARD COLOUR IDENTITIES
+    ======================================== */
+
+    /* TABLE EGGS — WARM EGG CREAM AND GOLD */
 
     .card-eggs {
-      --poultry-colour: 67, 176, 42;
-      --poultry-glow: 0.32;
+      --poultry-colour: 210, 174, 105;
+      --poultry-glow: 0.38;
     }
+
+    .card-eggs .poultry-card-image {
+      background: #f5e8cb;
+    }
+
+    .card-eggs .poultry-card-image::after {
+      background: linear-gradient(
+        180deg,
+        rgba(65, 43, 16, 0.02) 0%,
+        rgba(65, 43, 16, 0.08) 30%,
+        rgba(65, 43, 16, 0.60) 62%,
+        rgba(65, 43, 16, 0.92) 100%
+      );
+    }
+
+    .card-eggs .poultry-card-category {
+      color: #f8e5b9;
+    }
+
+    .card-eggs .poultry-card-link span {
+      color: #68471c;
+      background: #fff3d8;
+    }
+
+    .card-eggs:hover .poultry-card-link span {
+      background: #f0d8a5;
+    }
+
+    /* LIVE BROILERS — GREEN */
 
     .card-live-broilers {
       --poultry-colour: 23, 107, 58;
       --poultry-glow: 0.34;
     }
+
+    /* PROCESSED CHICKEN — DARK GREEN */
 
     .card-processed-chicken {
       --poultry-colour: 0, 58, 31;
@@ -669,17 +704,77 @@ content="Explore Soileva Poultry for table eggs, live broiler chickens and proce
       color: var(--detail-colour);
     }
 
-    /* PRODUCT DETAIL COLOURS */
+    /* ========================================
+       PRODUCT DETAIL COLOURS
+    ======================================== */
+
+    /* TABLE EGGS — EGG-SHELL CREAM */
 
     #eggs {
-      --detail-colour: #176b3a;
-      --detail-rgb: 23, 107, 58;
+      --detail-colour: #8b672e;
+      --detail-rgb: 210, 174, 105;
+
+      background: linear-gradient(
+        125deg,
+        #fff8e9 0%,
+        #ffffff 55%,
+        #f7ecd6 100%
+      );
+
+      border-color: rgba(139, 103, 46, 0.22);
+
+      box-shadow:
+        0 15px 45px rgba(139, 103, 46, 0.06),
+        0 4px 18px rgba(139, 103, 46, 0.07);
     }
+
+    #eggs .poultry-detail-image {
+      background: #f5e8cb;
+      border-color: rgba(139, 103, 46, 0.24);
+      box-shadow: 0 12px 30px rgba(139, 103, 46, 0.12);
+    }
+
+    #eggs .poultry-detail-copy h2 {
+      color: #493719;
+    }
+
+    #eggs .poultry-detail-copy .eyebrow {
+      color: #8b672e;
+    }
+
+    #eggs .poultry-benefit-list li {
+      background: #faf1df;
+      border-color: rgba(139, 103, 46, 0.16);
+      color: #5f4a2a;
+    }
+
+    #eggs .poultry-benefit-list li::before {
+      color: #a47a37;
+    }
+
+    #eggs .poultry-detail-actions .button-green {
+      border-color: #8b672e;
+      background: #8b672e;
+      color: #ffffff;
+    }
+
+    #eggs .poultry-detail-actions .button-green:hover {
+      background: #68471c;
+      border-color: #68471c;
+    }
+
+    #eggs .poultry-back-to-collection:hover {
+      color: #8b672e;
+    }
+
+    /* LIVE BROILERS — GREEN */
 
     #live-broilers {
       --detail-colour: #176b3a;
       --detail-rgb: 23, 107, 58;
     }
+
+    /* PROCESSED CHICKEN — DARK GREEN */
 
     #processed-chicken {
       --detail-colour: #003a1f;
