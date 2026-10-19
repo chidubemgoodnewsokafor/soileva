@@ -1,12 +1,23 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Fresh Vegetables & Fruits | Soileva — Growth with Nature</title><meta name="description"
-content="Explore Soileva's vegetables and fruits, learn about their nutritional benefits and uses, and contact us to discuss orders and availability.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="theme-color" content="#003a1f">  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <title>Fresh Vegetables & Fruits | Soileva — Growth with Nature</title>
+
+  <meta name="description"
+        content="Explore Soileva's vegetables and fruits, learn about their nutritional benefits and uses, and contact us to discuss orders and availability.">
+
+  <meta name="theme-color" content="#003a1f">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">  <link rel="stylesheet" href="style.css">  <style>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
     /* ========================================
        SHARED BRAND LOGO
     ======================================== */
@@ -25,8 +36,6 @@ content="Explore Soileva's vegetables and fruits, learn about their nutritional 
 
     /* ========================================
        VEGETABLES HERO
-       Layered, flowing colour shapes.
-       Add the hero photograph when ready.
     ======================================== */
 
     .vegetable-hero {
@@ -200,7 +209,6 @@ content="Explore Soileva's vegetables and fruits, learn about their nutritional 
 
     /* ========================================
        PRODUCE COLLECTION
-       Horizontal scrolling cards
     ======================================== */
 
     .vegetable-collection {
@@ -230,8 +238,8 @@ content="Explore Soileva's vegetables and fruits, learn about their nutritional 
 
     .vegetable-card-track {
       display: flex;
-      gap: 24px;
-      padding: 25px 6% 40px;
+      gap: 28px;
+      padding: 30px 6% 45px;
       overflow-x: auto;
       overflow-y: hidden;
       scroll-snap-type: x mandatory;
@@ -259,33 +267,40 @@ content="Explore Soileva's vegetables and fruits, learn about their nutritional 
     .vegetable-card {
       position: relative;
       display: flex;
-      flex: 0 0 275px;
+      flex: 0 0 290px;
       flex-direction: column;
-      min-height: 390px;
+      min-height: 440px;
       overflow: hidden;
-      border-radius: 30px;
+      border-radius: 50% 50% 44% 56% / 34% 36% 64% 66%;
       background: var(--card-colour, #ffffff);
       color: #003a1f;
       scroll-snap-align: start;
+      isolation: isolate;
       box-shadow: 0 16px 35px rgba(0, 58, 31, 0.09);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
 
     .vegetable-card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 24px 45px rgba(0, 58, 31, 0.15);
+      transform: translateY(-8px) rotate(-0.6deg);
+      box-shadow: 0 25px 45px rgba(0, 58, 31, 0.16);
     }
 
     .vegetable-card-image {
       position: relative;
-      height: 215px;
+      flex: 0 0 225px;
+      height: 225px;
       overflow: hidden;
       background:
-        radial-gradient(circle at 45% 40%, rgba(255,255,255,0.75), transparent 65%),
+        radial-gradient(
+          circle at 45% 40%,
+          rgba(255, 255, 255, 0.75),
+          transparent 65%
+        ),
         var(--card-colour, #e7eee4);
     }
 
     .vegetable-card-image img {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -293,7 +308,7 @@ content="Explore Soileva's vegetables and fruits, learn about their nutritional 
     }
 
     .vegetable-card:hover .vegetable-card-image img {
-      transform: scale(1.06);
+      transform: scale(1.07);
     }
 
     .vegetable-card-image::after {
@@ -306,8 +321,8 @@ content="Explore Soileva's vegetables and fruits, learn about their nutritional 
 
     .vegetable-card-number {
       position: absolute;
-      top: 15px;
-      left: 15px;
+      top: 27px;
+      left: 27px;
       z-index: 2;
       display: grid;
       place-items: center;
@@ -315,7 +330,7 @@ content="Explore Soileva's vegetables and fruits, learn about their nutritional 
       height: 37px;
       border: 1px solid rgba(0, 58, 31, 0.15);
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.84);
       color: #003a1f;
       font-size: 10px;
       font-weight: 900;
@@ -327,7 +342,7 @@ content="Explore Soileva's vegetables and fruits, learn about their nutritional 
       flex: 1;
       flex-direction: column;
       align-items: flex-start;
-      padding: 23px 23px 25px;
+      padding: 23px 29px 36px;
     }
 
     .vegetable-card-category {
@@ -335,7 +350,8 @@ content="Explore Soileva's vegetables and fruits, learn about their nutritional 
       color: rgba(0, 58, 31, 0.72);
       font-size: 9px;
       font-weight: 900;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.3px;
+      line-height: 1.5;
     }
 
     .vegetable-card h3 {
@@ -368,6 +384,7 @@ content="Explore Soileva's vegetables and fruits, learn about their nutritional 
       place-items: center;
       width: 30px;
       height: 30px;
+      flex-shrink: 0;
       border-radius: 50%;
       background: #003a1f;
       color: #ffffff;
@@ -379,7 +396,7 @@ content="Explore Soileva's vegetables and fruits, learn about their nutritional 
       transform: rotate(45deg);
     }
 
-    /* Card colours requested by Soileva */
+    /* CARD COLOURS */
 
     .card-cabbage-one {
       --card-colour: #ffffff;
@@ -392,7 +409,7 @@ content="Explore Soileva's vegetables and fruits, learn about their nutritional 
 
     .card-cabbage-two .vegetable-card-category,
     .card-cabbage-two p {
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(255, 255, 255, 0.94);
     }
 
     .card-cabbage-two .vegetable-card-link {
@@ -405,11 +422,25 @@ content="Explore Soileva's vegetables and fruits, learn about their nutritional 
     }
 
     .card-cucumber {
-      --card-colour: #c8e8b8;
+      --card-colour: #43b02a;
     }
 
-    .card-pepper {
+    .card-cucumber .vegetable-card-category,
+    .card-cucumber p {
+      color: #153f18;
+    }
+
+    .card-bell-pepper {
       --card-colour: #f4d74e;
+    }
+
+    .card-habanero {
+      --card-colour: #ed8a36;
+    }
+
+    .card-habanero .vegetable-card-category,
+    .card-habanero p {
+      color: #54250b;
     }
 
     .card-watermelon {
@@ -419,7 +450,7 @@ content="Explore Soileva's vegetables and fruits, learn about their nutritional 
 
     .card-watermelon .vegetable-card-category,
     .card-watermelon p {
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(255, 255, 255, 0.94);
     }
 
     .card-watermelon .vegetable-card-link {
@@ -596,7 +627,7 @@ content="Explore Soileva's vegetables and fruits, learn about their nutritional 
       color: #43b02a;
     }
 
-    /* Detail colours */
+    /* DETAIL COLOURS */
 
     #cabbage {
       --detail-colour: #f8f8f8;
@@ -607,11 +638,15 @@ content="Explore Soileva's vegetables and fruits, learn about their nutritional 
     }
 
     #cucumber {
-      --detail-colour: #c8e8b8;
+      --detail-colour: #43b02a;
     }
 
-    #peppers {
+    #bell-pepper {
       --detail-colour: #f4d74e;
+    }
+
+    #habanero {
+      --detail-colour: #ed8a36;
     }
 
     #watermelon {
@@ -661,7 +696,11 @@ content="Explore Soileva's vegetables and fruits, learn about their nutritional 
 
     .vegetable-contact .contact-pill {
       background:
-        radial-gradient(circle at 95% 0%, rgba(67, 176, 42, 0.12), transparent 35%),
+        radial-gradient(
+          circle at 95% 0%,
+          rgba(67, 176, 42, 0.12),
+          transparent 35%
+        ),
         #eff6eb;
     }
 
@@ -702,6 +741,10 @@ content="Explore Soileva's vegetables and fruits, learn about their nutritional 
 
       .produce-detail-copy h2 {
         font-size: 34px;
+      }
+
+      .vegetable-card {
+        flex-basis: 280px;
       }
     }
 
@@ -812,20 +855,29 @@ content="Explore Soileva's vegetables and fruits, learn about their nutritional 
       }
 
       .vegetable-card-track {
-        gap: 17px;
-        padding-right: 6%;
-        padding-left: 6%;
+        gap: 20px;
+        padding: 25px 6% 35px;
         scroll-padding-left: 6%;
       }
 
       .vegetable-card {
-        flex-basis: 78vw;
+        flex: 0 0 78vw;
         max-width: 310px;
-        min-height: 390px;
+        min-height: 430px;
       }
 
       .vegetable-card-image {
-        height: 215px;
+        flex-basis: 220px;
+        height: 220px;
+      }
+
+      .vegetable-card-number {
+        top: 24px;
+        left: 24px;
+      }
+
+      .vegetable-card-body {
+        padding: 22px 26px 34px;
       }
 
       .produce-details {
@@ -900,1183 +952,1177 @@ content="Explore Soileva's vegetables and fruits, learn about their nutritional 
         transition: none;
       }
     }
-  </style></head><body>  <!-- ========================================
+  </style>
+</head>
+
+<body>
+
+  <!-- ========================================
        SHARED NAVIGATION
-  ======================================== -->  <header class="site-header"><a href="index.html" class="brand" aria-label="Soileva homepage">
-  <img
-    src="images/soileva-logo.png"
-    alt="Soileva — Growth with Nature"
-    class="brand-logo">
-</a>
+  ======================================== -->
 
-<button class="menu-toggle"
-        id="menuToggle"
-        type="button"
-        aria-label="Open navigation"
-        aria-expanded="false"
-        aria-controls="mainNav">
-  <span></span>
-  <span></span>
-</button>
+  <header class="site-header">
 
-<nav class="main-nav" id="mainNav" aria-label="Main navigation">
+    <a href="index.html" class="brand" aria-label="Soileva homepage">
+      <img
+        src="images/soileva-logo.png"
+        alt="Soileva — Growth with Nature"
+        class="brand-logo">
+    </a>
 
-  <a class="nav-home" href="index.html">Home</a>
+    <button class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="mainNav">
+      <span></span>
+      <span></span>
+    </button>
 
-  <div class="nav-produce">
-    <span class="nav-section-label">OUR PRODUCE</span>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
 
-    <div class="nav-dropdown">
-      <button class="dropdown-toggle"
-              type="button"
-              aria-expanded="false"
-              aria-controls="vegetablesDropdown">
-        <span>Vegetables</span>
-        <span class="dropdown-icon" aria-hidden="true">+</span>
-      </button>
+      <a class="nav-home" href="index.html">Home</a>
 
-      <div class="dropdown-menu" id="vegetablesDropdown">
-        <a href="vegetables.html">All Vegetables</a>
-        <a href="vegetables.html#cabbage">Cabbage</a>
-        <a href="vegetables.html#cucumber">Cucumber</a>
-        <a href="vegetables.html#peppers">Peppers</a>
-        <a href="vegetables.html#watermelon">Watermelon</a>
+      <div class="nav-produce">
+        <span class="nav-section-label">OUR PRODUCE</span>
+
+        <div class="nav-dropdown">
+          <button class="dropdown-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="vegetablesDropdown">
+            <span>Vegetables</span>
+            <span class="dropdown-icon" aria-hidden="true">+</span>
+          </button>
+
+          <div class="dropdown-menu" id="vegetablesDropdown">
+            <a href="vegetables.html">All Vegetables</a>
+            <a href="vegetables.html#cabbage">Green Cabbage</a>
+            <a href="vegetables.html#cabbage-purple">Red Cabbage</a>
+            <a href="vegetables.html#cucumber">Cucumber</a>
+            <a href="vegetables.html#bell-pepper">Bell Pepper</a>
+            <a href="vegetables.html#habanero">Habanero Pepper</a>
+            <a href="vegetables.html#watermelon">Watermelon</a>
+            <a href="vegetables.html#green-beans">Green Beans</a>
+            <a href="vegetables.html#okra">Okra</a>
+            <a href="vegetables.html#ugu">Ugu</a>
+            <a href="vegetables.html#tomatoes">Tomatoes</a>
+            <a href="vegetables.html#carrots">Carrots</a>
+            <a href="vegetables.html#spinach">Spinach</a>
+            <a href="vegetables.html#corn">Sweet Corn</a>
+            <a href="vegetables.html#melon">Melon</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <button class="dropdown-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="poultryDropdown">
+            <span>Poultry</span>
+            <span class="dropdown-icon" aria-hidden="true">+</span>
+          </button>
+
+          <div class="dropdown-menu" id="poultryDropdown">
+            <a href="poultry.html">All Poultry</a>
+            <a href="poultry.html#eggs">Eggs</a>
+            <a href="poultry.html#broilers">Broilers</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <button class="dropdown-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="riceDropdown">
+            <span>Rice</span>
+            <span class="dropdown-icon" aria-hidden="true">+</span>
+          </button>
+
+          <div class="dropdown-menu" id="riceDropdown">
+            <a href="rice.html">Rice Overview</a>
+            <a href="rice.html#cultivation">Rice Cultivation</a>
+            <a href="rice.html#sourcing">Rice Sourcing</a>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="nav-dropdown">
-      <button class="dropdown-toggle"
-              type="button"
-              aria-expanded="false"
-              aria-controls="poultryDropdown">
-        <span>Poultry</span>
-        <span class="dropdown-icon" aria-hidden="true">+</span>
-      </button>
+      <a class="nav-link" href="about.html">About Soileva</a>
 
-      <div class="dropdown-menu" id="poultryDropdown">
-        <a href="poultry.html">All Poultry</a>
-        <a href="poultry.html#eggs">Eggs</a>
-        <a href="poultry.html#broilers">Broilers</a>
-      </div>
-    </div>
-
-    <div class="nav-dropdown">
-      <button class="dropdown-toggle"
-              type="button"
-              aria-expanded="false"
-              aria-controls="riceDropdown">
-        <span>Rice</span>
-        <span class="dropdown-icon" aria-hidden="true">+</span>
-      </button>
-
-      <div class="dropdown-menu" id="riceDropdown">
-        <a href="rice.html">Rice Overview</a>
-        <a href="rice.html#cultivation">Rice Cultivation</a>
-        <a href="rice.html#sourcing">Rice Sourcing</a>
-      </div>
-    </div>
-  </div>
-
-  <a class="nav-link" href="about.html">About Soileva</a>
-
-  <a class="nav-link nav-farmcare" href="farmcare.html">
-    Soileva Farmcare
-    <span class="nav-external" aria-hidden="true">↗</span>
-  </a>
-
-  <a class="nav-contact" href="#contact">
-    Contact Us <span aria-hidden="true">↗</span>
-  </a>
-
-</nav>
-
-  </header>  <main><!-- ========================================
-     VEGETABLES HERO
-======================================== -->
-
-<section class="vegetable-hero" aria-labelledby="vegetableHeroTitle">
-
-  <div class="hero-colour-shape" aria-hidden="true"></div>
-
-  <!-- Add your hero image to this file path later. -->
-  <div class="hero-image-placeholder" aria-hidden="true">
-    <img src="images/vegetables-hero.jpg" alt="">
-  </div>
-
-  <div class="vegetable-hero-content">
-
-    <span class="eyebrow">GROWN WITH PURPOSE</span>
-
-    <h1 id="vegetableHeroTitle">
-      Fresh from<br>
-      the field.<br>
-      <span>Made for your table.</span>
-    </h1>
-
-    <p>
-      Discover vegetables and fruits, explore their nutritional
-      value and everyday uses, and find produce for your kitchen
-      and business.
-    </p>
-
-    <div class="hero-actions">
-      <a href="#all-vegetables" class="button button-green">
-        Explore our produce <span>↘</span>
+      <a class="nav-link nav-farmcare" href="farmcare.html">
+        Soileva Farmcare
+        <span class="nav-external" aria-hidden="true">↗</span>
       </a>
 
-      <a href="#contact" class="button-outline">
-        Order enquiries <span>↗</span>
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<!-- ========================================
-     INTRODUCTION
-======================================== -->
-
-<section class="vegetable-intro section-padding">
-
-  <div class="intro-label">
-    <span class="label-line"></span>
-    GOOD FOOD STARTS WITH GOOD PRODUCE
-  </div>
-
-  <div class="vegetable-intro-grid">
-
-    <h2>
-      Nourishing people.<br>
-      <span>Growing the future.</span>
-    </h2>
-
-    <div class="vegetable-intro-copy">
-
-      <p>
-        Vegetables and fruits bring colour, flavour and variety
-        to everyday meals. Each has its own nutritional qualities
-        and a place in the foods we prepare.
-      </p>
-
-      <p>
-        Explore our collection to learn about the produce,
-        how it is commonly used and the benefits it can offer
-        as part of a balanced diet.
-      </p>
-
-      <a href="#all-vegetables" class="text-link">
-        Browse the collection <span>↘</span>
+      <a class="nav-contact" href="#contact">
+        Contact Us <span aria-hidden="true">↗</span>
       </a>
 
-    </div>
-  </div>
-</section>
+    </nav>
 
-<!-- ========================================
-     HORIZONTAL PRODUCE CARDS
-======================================== -->
+  </header>
 
-<section class="vegetable-collection" id="all-vegetables">
+  <main>
 
-  <div class="section-heading">
-    <div>
-      <span class="eyebrow eyebrow-green">EXPLORE OUR PRODUCE</span>
-      <h2>From the soil<br>to <span>your table.</span></h2>
-    </div>
+    <!-- ========================================
+         VEGETABLES HERO
+    ======================================== -->
 
-    <p>
-      Explore familiar favourites and discover more
-      fruits and vegetables for everyday meals.
-    </p>
-  </div>
+    <section class="vegetable-hero" aria-labelledby="vegetableHeroTitle">
 
-  <div class="collection-guide">
-    <span>Select a card to learn more about each produce.</span>
-    <span>SCROLL SIDEWAYS TO EXPLORE →</span>
-  </div>
+      <div class="hero-colour-shape" aria-hidden="true"></div>
 
-  <div class="vegetable-card-track"
-       aria-label="Fruit and vegetable collection">
-
-    <!-- CABBAGE VARIETY ONE -->
-
-    <a href="#cabbage" class="vegetable-card card-cabbage-one">
-
-      <div class="vegetable-card-image">
-        <img src="images/cabbage.jpg"
-             alt="Fresh green cabbage"
-             loading="lazy">
-        <span class="vegetable-card-number">01</span>
+      <div class="hero-image-placeholder" aria-hidden="true">
+        <img src="images/vegetables-hero.jpg" alt="">
       </div>
 
-      <div class="vegetable-card-body">
-        <span class="vegetable-card-category">CRUCIFEROUS VEGETABLE</span>
-        <h3>Cabbage</h3>
-        <p>A crisp, versatile vegetable containing fibre and vitamin C.</p>
-        <span class="vegetable-card-link">Explore cabbage <span>↗</span></span>
+      <div class="vegetable-hero-content">
+
+        <span class="eyebrow">GROWN WITH PURPOSE</span>
+
+        <h1 id="vegetableHeroTitle">
+          Fresh from<br>
+          the field.<br>
+          <span>Made for your table.</span>
+        </h1>
+
+        <p>
+          Discover vegetables and fruits, explore their nutritional
+          value and everyday uses, and find produce for your kitchen
+          and business.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#all-vegetables" class="button button-green">
+            Explore our produce <span>↘</span>
+          </a>
+
+          <a href="#contact" class="button-outline">
+            Order enquiries <span>↗</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================
+         INTRODUCTION
+    ======================================== -->
+
+    <section class="vegetable-intro section-padding">
+
+      <div class="intro-label">
+        <span class="label-line"></span>
+        GOOD FOOD STARTS WITH GOOD PRODUCE
       </div>
 
-    </a>
+      <div class="vegetable-intro-grid">
 
-    <!-- CABBAGE VARIETY TWO -->
+        <h2>
+          Nourishing people.<br>
+          <span>Growing the future.</span>
+        </h2>
 
-    <a href="#cabbage-purple" class="vegetable-card card-cabbage-two">
+        <div class="vegetable-intro-copy">
 
-      <div class="vegetable-card-image">
-        <img src="images/cabbage-purple.jpg"
-             alt="Second cabbage variety"
-             loading="lazy">
-        <span class="vegetable-card-number">02</span>
+          <p>
+            Vegetables and fruits bring colour, flavour and variety
+            to everyday meals. Each has its own nutritional qualities
+            and a place in the foods we prepare.
+          </p>
+
+          <p>
+            Explore our collection to learn about the produce,
+            how it is commonly used and the benefits it can offer
+            as part of a balanced diet.
+          </p>
+
+          <a href="#all-vegetables" class="text-link">
+            Browse the collection <span>↘</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         HORIZONTAL PRODUCE CARDS
+    ======================================== -->
+
+    <section class="vegetable-collection" id="all-vegetables">
+
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow eyebrow-green">EXPLORE OUR PRODUCE</span>
+          <h2>From the soil<br>to <span>your table.</span></h2>
+        </div>
+
+        <p>
+          Explore familiar favourites and discover more
+          fruits and vegetables for everyday meals.
+        </p>
       </div>
 
-      <div class="vegetable-card-body">
-        <span class="vegetable-card-category">ANOTHER CABBAGE VARIETY</span>
-        <h3>More Cabbage</h3>
-        <p>Enjoy cabbage in a range of meals, from fresh salads to cooked dishes.</p>
-        <span class="vegetable-card-link">Explore variety <span>↗</span></span>
+      <div class="collection-guide">
+        <span>Select a card to learn more about each produce.</span>
+        <span>SCROLL SIDEWAYS TO EXPLORE →</span>
       </div>
 
-    </a>
+      <div class="vegetable-card-track"
+           aria-label="Fruit and vegetable collection">
 
-    <!-- CUCUMBER -->
+        <!-- 01: GREEN CABBAGE -->
 
-    <a href="#cucumber" class="vegetable-card card-cucumber">
+        <a href="#cabbage" class="vegetable-card card-cabbage-one">
+          <div class="vegetable-card-image">
+            <img src="images/cabbage.jpg"
+                 alt="Fresh green cabbage"
+                 loading="lazy">
+            <span class="vegetable-card-number">01</span>
+          </div>
 
-      <div class="vegetable-card-image">
-        <img src="images/cucumber.jpg"
-             alt="Fresh cucumber"
-             loading="lazy">
-        <span class="vegetable-card-number">03</span>
+          <div class="vegetable-card-body">
+            <span class="vegetable-card-category">CRUCIFEROUS VEGETABLE</span>
+            <h3>Green Cabbage</h3>
+            <p>A crisp, versatile vegetable containing fibre and vitamin C.</p>
+            <span class="vegetable-card-link">Explore cabbage <span>↗</span></span>
+          </div>
+        </a>
+
+        <!-- 02: RED CABBAGE -->
+
+        <a href="#cabbage-purple" class="vegetable-card card-cabbage-two">
+          <div class="vegetable-card-image">
+            <img src="images/cabbage-purple.jpg"
+                 alt="Fresh red cabbage with deep purple-red leaves"
+                 loading="lazy">
+            <span class="vegetable-card-number">02</span>
+          </div>
+
+          <div class="vegetable-card-body">
+            <span class="vegetable-card-category">PURPLE-RED CABBAGE</span>
+            <h3>Red Cabbage</h3>
+            <p>Deep purple-red leaves contain anthocyanins, colourful plant pigments with antioxidant activity.</p>
+            <span class="vegetable-card-link">Explore red cabbage <span>↗</span></span>
+          </div>
+        </a>
+
+        <!-- 03: CUCUMBER -->
+
+        <a href="#cucumber" class="vegetable-card card-cucumber">
+          <div class="vegetable-card-image">
+            <img src="images/cucumber.jpg"
+                 alt="Fresh cucumber"
+                 loading="lazy">
+            <span class="vegetable-card-number">03</span>
+          </div>
+
+          <div class="vegetable-card-body">
+            <span class="vegetable-card-category">FRESH & REFRESHING</span>
+            <h3>Cucumber</h3>
+            <p>Water-rich cucumber adds freshness and crunch to meals.</p>
+            <span class="vegetable-card-link">Explore cucumber <span>↗</span></span>
+          </div>
+        </a>
+
+        <!-- 04: BELL PEPPER -->
+
+        <a href="#bell-pepper" class="vegetable-card card-bell-pepper">
+          <div class="vegetable-card-image">
+            <img src="images/bell-pepper.jpg"
+                 alt="Fresh colourful bell peppers"
+                 loading="lazy">
+            <span class="vegetable-card-number">04</span>
+          </div>
+
+          <div class="vegetable-card-body">
+            <span class="vegetable-card-category">SWEET & CRISP</span>
+            <h3>Bell Pepper</h3>
+            <p>Mild, colourful and crisp, bell peppers bring sweetness and freshness to everyday meals.</p>
+            <span class="vegetable-card-link">Explore bell peppers <span>↗</span></span>
+          </div>
+        </a>
+
+        <!-- 05: HABANERO PEPPER -->
+
+        <a href="#habanero" class="vegetable-card card-habanero">
+          <div class="vegetable-card-image">
+            <img src="images/habanero-pepper.jpg"
+                 alt="Fresh orange and red habanero peppers"
+                 loading="lazy">
+            <span class="vegetable-card-number">05</span>
+          </div>
+
+          <div class="vegetable-card-body">
+            <span class="vegetable-card-category">INTENSE HEAT & FLAVOUR</span>
+            <h3>Habanero Pepper</h3>
+            <p>Small but intensely hot, habanero peppers add a distinctive aroma and fiery kick to meals.</p>
+            <span class="vegetable-card-link">Explore habanero <span>↗</span></span>
+          </div>
+        </a>
+
+        <!-- 06: WATERMELON -->
+
+        <a href="#watermelon" class="vegetable-card card-watermelon">
+          <div class="vegetable-card-image">
+            <img src="images/watermelon.jpg"
+                 alt="Fresh watermelon"
+                 loading="lazy">
+            <span class="vegetable-card-number">06</span>
+          </div>
+
+          <div class="vegetable-card-body">
+            <span class="vegetable-card-category">JUICY & REFRESHING</span>
+            <h3>Watermelon</h3>
+            <p>A refreshing fruit with high water content and lycopene.</p>
+            <span class="vegetable-card-link">Explore watermelon <span>↗</span></span>
+          </div>
+        </a>
+
+        <!-- 07: GREEN BEANS -->
+
+        <a href="#green-beans" class="vegetable-card card-green-beans">
+          <div class="vegetable-card-image">
+            <img src="images/green-beans.jpg"
+                 alt="Fresh green beans"
+                 loading="lazy">
+            <span class="vegetable-card-number">07</span>
+          </div>
+
+          <div class="vegetable-card-body">
+            <span class="vegetable-card-category">FIBRE & VITAMINS</span>
+            <h3>Green Beans</h3>
+            <p>A versatile vegetable for sides, stir-fries and mixed dishes.</p>
+            <span class="vegetable-card-link">Explore green beans <span>↗</span></span>
+          </div>
+        </a>
+
+        <!-- 08: OKRA -->
+
+        <a href="#okra" class="vegetable-card card-okra">
+          <div class="vegetable-card-image">
+            <img src="images/okra.jpg"
+                 alt="Fresh okra pods"
+                 loading="lazy">
+            <span class="vegetable-card-number">08</span>
+          </div>
+
+          <div class="vegetable-card-body">
+            <span class="vegetable-card-category">A SOUP FAVOURITE</span>
+            <h3>Okra</h3>
+            <p>Known for its fibre and its useful texture in soups and stews.</p>
+            <span class="vegetable-card-link">Explore okra <span>↗</span></span>
+          </div>
+        </a>
+
+        <!-- 09: UGU -->
+
+        <a href="#ugu" class="vegetable-card card-ugu">
+          <div class="vegetable-card-image">
+            <img src="images/ugu.jpg"
+                 alt="Fresh ugu leaves"
+                 loading="lazy">
+            <span class="vegetable-card-number">09</span>
+          </div>
+
+          <div class="vegetable-card-body">
+            <span class="vegetable-card-category">TRADITIONAL GREENS</span>
+            <h3>Ugu</h3>
+            <p>A popular leafy vegetable used in many Nigerian dishes.</p>
+            <span class="vegetable-card-link">Explore ugu <span>↗</span></span>
+          </div>
+        </a>
+
+        <!-- 10: TOMATOES -->
+
+        <a href="#tomatoes" class="vegetable-card card-tomatoes">
+          <div class="vegetable-card-image">
+            <img src="images/tomatoes.jpg"
+                 alt="Fresh tomatoes"
+                 loading="lazy">
+            <span class="vegetable-card-number">10</span>
+          </div>
+
+          <div class="vegetable-card-body">
+            <span class="vegetable-card-category">A KITCHEN STAPLE</span>
+            <h3>Tomatoes</h3>
+            <p>A source of vitamin C and lycopene, used in countless dishes.</p>
+            <span class="vegetable-card-link">Explore tomatoes <span>↗</span></span>
+          </div>
+        </a>
+
+        <!-- 11: CARROTS -->
+
+        <a href="#carrots" class="vegetable-card card-carrots">
+          <div class="vegetable-card-image">
+            <img src="images/carrots.jpg"
+                 alt="Fresh carrots"
+                 loading="lazy">
+            <span class="vegetable-card-number">11</span>
+          </div>
+
+          <div class="vegetable-card-body">
+            <span class="vegetable-card-category">ORANGE ROOT VEGETABLE</span>
+            <h3>Carrots</h3>
+            <p>Rich in beta-carotene, which the body can convert to vitamin A.</p>
+            <span class="vegetable-card-link">Explore carrots <span>↗</span></span>
+          </div>
+        </a>
+
+        <!-- 12: SPINACH -->
+
+        <a href="#spinach" class="vegetable-card card-spinach">
+          <div class="vegetable-card-image">
+            <img src="images/spinach.jpg"
+                 alt="Fresh spinach leaves"
+                 loading="lazy">
+            <span class="vegetable-card-number">12</span>
+          </div>
+
+          <div class="vegetable-card-body">
+            <span class="vegetable-card-category">LEAFY GREENS</span>
+            <h3>Spinach</h3>
+            <p>A leafy vegetable containing folate, vitamin K and other nutrients.</p>
+            <span class="vegetable-card-link">Explore spinach <span>↗</span></span>
+          </div>
+        </a>
+
+        <!-- 13: SWEET CORN -->
+
+        <a href="#corn" class="vegetable-card card-corn">
+          <div class="vegetable-card-image">
+            <img src="images/sweet-corn.jpg"
+                 alt="Fresh sweet corn"
+                 loading="lazy">
+            <span class="vegetable-card-number">13</span>
+          </div>
+
+          <div class="vegetable-card-body">
+            <span class="vegetable-card-category">A VERSATILE FOOD</span>
+            <h3>Sweet Corn</h3>
+            <p>Provides carbohydrates and fibre for everyday meals.</p>
+            <span class="vegetable-card-link">Explore sweet corn <span>↗</span></span>
+          </div>
+        </a>
+
+        <!-- 14: MELON -->
+
+        <a href="#melon" class="vegetable-card card-melon">
+          <div class="vegetable-card-image">
+            <img src="images/melon.jpg"
+                 alt="Fresh melon"
+                 loading="lazy">
+            <span class="vegetable-card-number">14</span>
+          </div>
+
+          <div class="vegetable-card-body">
+            <span class="vegetable-card-category">FRUIT & FOOD CULTURE</span>
+            <h3>Melon</h3>
+            <p>Melon varieties are used in refreshing fruit dishes and traditional cooking.</p>
+            <span class="vegetable-card-link">Explore melon <span>↗</span></span>
+          </div>
+        </a>
+
       </div>
-
-      <div class="vegetable-card-body">
-        <span class="vegetable-card-category">FRESH & REFRESHING</span>
-        <h3>Cucumber</h3>
-        <p>Water-rich cucumber adds freshness and crunch to meals.</p>
-        <span class="vegetable-card-link">Explore cucumber <span>↗</span></span>
-      </div>
-
-    </a>
-
-    <!-- PEPPER -->
-
-    <a href="#peppers" class="vegetable-card card-pepper">
-
-      <div class="vegetable-card-image">
-        <img src="images/pepper.jpg"
-             alt="Fresh peppers"
-             loading="lazy">
-        <span class="vegetable-card-number">04</span>
-      </div>
-
-      <div class="vegetable-card-body">
-        <span class="vegetable-card-category">FLAVOUR & COLOUR</span>
-        <h3>Pepper</h3>
-        <p>A kitchen essential for adding flavour, colour and heat.</p>
-        <span class="vegetable-card-link">Explore peppers <span>↗</span></span>
-      </div>
-
-    </a>
-
-    <!-- WATERMELON -->
-
-    <a href="#watermelon" class="vegetable-card card-watermelon">
-
-      <div class="vegetable-card-image">
-        <img src="images/watermelon.jpg"
-             alt="Fresh watermelon"
-             loading="lazy">
-        <span class="vegetable-card-number">05</span>
-      </div>
-
-      <div class="vegetable-card-body">
-        <span class="vegetable-card-category">JUICY & REFRESHING</span>
-        <h3>Watermelon</h3>
-        <p>A refreshing fruit with high water content and lycopene.</p>
-        <span class="vegetable-card-link">Explore watermelon <span>↗</span></span>
-      </div>
-
-    </a>
-
-    <!-- GREEN BEANS -->
-
-    <a href="#green-beans" class="vegetable-card card-green-beans">
-
-      <div class="vegetable-card-image">
-        <img src="images/green-beans.jpg"
-             alt="Fresh green beans"
-             loading="lazy">
-        <span class="vegetable-card-number">06</span>
-      </div>
-
-      <div class="vegetable-card-body">
-        <span class="vegetable-card-category">FIBRE & VITAMINS</span>
-        <h3>Green Beans</h3>
-        <p>A versatile vegetable for sides, stir-fries and mixed dishes.</p>
-        <span class="vegetable-card-link">Explore green beans <span>↗</span></span>
-      </div>
-
-    </a>
-
-    <!-- OKRA -->
-
-    <a href="#okra" class="vegetable-card card-okra">
-
-      <div class="vegetable-card-image">
-        <img src="images/okra.jpg"
-             alt="Fresh okra pods"
-             loading="lazy">
-        <span class="vegetable-card-number">07</span>
-      </div>
-
-      <div class="vegetable-card-body">
-        <span class="vegetable-card-category">A SOUP FAVOURITE</span>
-        <h3>Okra</h3>
-        <p>Known for its fibre and its useful texture in soups and stews.</p>
-        <span class="vegetable-card-link">Explore okra <span>↗</span></span>
-      </div>
-
-    </a>
-
-    <!-- UGU -->
-
-    <a href="#ugu" class="vegetable-card card-ugu">
-
-      <div class="vegetable-card-image">
-        <img src="images/ugu.jpg"
-             alt="Fresh ugu leaves"
-             loading="lazy">
-        <span class="vegetable-card-number">08</span>
-      </div>
-
-      <div class="vegetable-card-body">
-        <span class="vegetable-card-category">TRADITIONAL GREENS</span>
-        <h3>Ugu</h3>
-        <p>A popular leafy vegetable used in many Nigerian dishes.</p>
-        <span class="vegetable-card-link">Explore ugu <span>↗</span></span>
-      </div>
-
-    </a>
-
-    <!-- TOMATOES -->
-
-    <a href="#tomatoes" class="vegetable-card card-tomatoes">
-
-      <div class="vegetable-card-image">
-        <img src="images/tomatoes.jpg"
-             alt="Fresh tomatoes"
-             loading="lazy">
-        <span class="vegetable-card-number">09</span>
-      </div>
-
-      <div class="vegetable-card-body">
-        <span class="vegetable-card-category">A KITCHEN STAPLE</span>
-        <h3>Tomatoes</h3>
-        <p>A source of vitamin C and lycopene, used in countless dishes.</p>
-        <span class="vegetable-card-link">Explore tomatoes <span>↗</span></span>
-      </div>
-
-    </a>
-
-    <!-- CARROTS -->
-
-    <a href="#carrots" class="vegetable-card card-carrots">
-
-      <div class="vegetable-card-image">
-        <img src="images/carrots.jpg"
-             alt="Fresh carrots"
-             loading="lazy">
-        <span class="vegetable-card-number">10</span>
-      </div>
-
-      <div class="vegetable-card-body">
-        <span class="vegetable-card-category">ORANGE ROOT VEGETABLE</span>
-        <h3>Carrots</h3>
-        <p>Rich in beta-carotene, which the body can convert to vitamin A.</p>
-        <span class="vegetable-card-link">Explore carrots <span>↗</span></span>
-      </div>
-
-    </a>
-
-    <!-- SPINACH -->
-
-    <a href="#spinach" class="vegetable-card card-spinach">
-
-      <div class="vegetable-card-image">
-        <img src="images/spinach.jpg"
-             alt="Fresh spinach leaves"
-             loading="lazy">
-        <span class="vegetable-card-number">11</span>
-      </div>
-
-      <div class="vegetable-card-body">
-        <span class="vegetable-card-category">LEAFY GREENS</span>
-        <h3>Spinach</h3>
-        <p>A leafy vegetable containing folate, vitamin K and other nutrients.</p>
-        <span class="vegetable-card-link">Explore spinach <span>↗</span></span>
-      </div>
-
-    </a>
-
-    <!-- SWEET CORN -->
-
-    <a href="#corn" class="vegetable-card card-corn">
-
-      <div class="vegetable-card-image">
-        <img src="images/sweet-corn.jpg"
-             alt="Fresh sweet corn"
-             loading="lazy">
-        <span class="vegetable-card-number">12</span>
-      </div>
-
-      <div class="vegetable-card-body">
-        <span class="vegetable-card-category">A VERSATILE FOOD</span>
-        <h3>Sweet Corn</h3>
-        <p>Provides carbohydrates and fibre for everyday meals.</p>
-        <span class="vegetable-card-link">Explore sweet corn <span>↗</span></span>
-      </div>
-
-    </a>
-
-    <!-- MELON -->
-
-    <a href="#melon" class="vegetable-card card-melon">
-
-      <div class="vegetable-card-image">
-        <img src="images/melon.jpg"
-             alt="Fresh melon"
-             loading="lazy">
-        <span class="vegetable-card-number">13</span>
-      </div>
-
-      <div class="vegetable-card-body">
-        <span class="vegetable-card-category">FRUIT & FOOD CULTURE</span>
-        <h3>Melon</h3>
-        <p>Melon varieties are used in refreshing fruit dishes and traditional cooking.</p>
-        <span class="vegetable-card-link">Explore melon <span>↗</span></span>
-      </div>
-
-    </a>
-
-  </div>
-</section>
-
-<!-- ========================================
-     PRODUCE DETAILS
-     Card images are reused here.
-======================================== -->
-
-<section class="produce-details" aria-label="Produce information">
-
-  <!-- CABBAGE VARIETY ONE -->
-
-  <article class="produce-detail" id="cabbage">
-
-    <div class="produce-detail-image">
-      <img src="images/cabbage.jpg"
-           alt="Fresh green cabbage"
-           loading="lazy">
-    </div>
-
-    <div class="produce-detail-copy">
-      <span class="eyebrow">01 / CABBAGE</span>
-
-      <h2>Fresh, crisp cabbage.</h2>
-
-      <p>
-        Cabbage is a leafy vegetable enjoyed raw or cooked.
-        Its mild flavour and crisp texture make it suitable for
-        salads, slaws, stir-fries, soups and traditional meals.
-      </p>
-
-      <h3 class="benefit-heading">Nutritional benefits</h3>
-
-      <ul class="benefit-list">
-        <li>Provides vitamin C</li>
-        <li>Contains dietary fibre</li>
-        <li>Provides vitamin K</li>
-        <li>Contains protective plant compounds</li>
-      </ul>
-
-      <h3 class="benefit-heading">How to use it</h3>
-
-      <p>
-        Slice it into salads, lightly cook it with other vegetables,
-        or add it to soups and stews. Wash thoroughly before use.
-      </p>
-
-      <div class="produce-detail-actions">
-        <a href="#contact" class="button button-green">
+    </section>
+
+    <!-- ========================================
+         PRODUCE DETAILS
+    ======================================== -->
+
+    <section class="produce-details" aria-label="Produce information">
+
+      <!-- 01: GREEN CABBAGE -->
+
+      <article class="produce-detail" id="cabbage">
+        <div class="produce-detail-image">
+          <img src="images/cabbage.jpg"
+               alt="Fresh green cabbage"
+               loading="lazy">
+        </div>
+
+        <div class="produce-detail-copy">
+          <span class="eyebrow">01 / GREEN CABBAGE</span>
+          <h2>Fresh, crisp cabbage.</h2>
+
+          <p>
+            Cabbage is a leafy vegetable enjoyed raw or cooked.
+            Its mild flavour and crisp texture make it suitable for
+            salads, slaws, stir-fries, soups and traditional meals.
+          </p>
+
+          <h3 class="benefit-heading">Nutritional benefits</h3>
+          <ul class="benefit-list">
+            <li>Provides vitamin C</li>
+            <li>Contains dietary fibre</li>
+            <li>Provides vitamin K</li>
+            <li>Contains protective plant compounds</li>
+          </ul>
+
+          <h3 class="benefit-heading">How to use it</h3>
+          <p>
+            Slice it into salads, lightly cook it with other vegetables,
+            or add it to soups and stews. Wash thoroughly before use.
+          </p>
+
+          <div class="produce-detail-actions">
+            <a href="#contact" class="button button-green">
+              Contact us to order <span>↗</span>
+            </a>
+            <a href="#all-vegetables" class="back-to-collection">
+              ↑ See other fruits & vegetables
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 02: RED CABBAGE -->
+
+      <article class="produce-detail" id="cabbage-purple">
+        <div class="produce-detail-image">
+          <img src="images/cabbage-purple.jpg"
+               alt="Fresh red cabbage with deep purple-red leaves"
+               loading="lazy">
+        </div>
+
+        <div class="produce-detail-copy">
+          <span class="eyebrow">02 / RED CABBAGE</span>
+          <h2>Bold colour. Valuable nutrition.</h2>
+
+          <p>
+            Red cabbage is recognised by its deep purple-red leaves
+            and crisp texture. Its distinctive colour comes largely
+            from anthocyanins, plant pigments with antioxidant
+            activity. It brings colour, crunch and variety to meals.
+          </p>
+
+          <h3 class="benefit-heading">Nutritional benefits</h3>
+          <ul class="benefit-list">
+            <li>Contains anthocyanins with antioxidant activity</li>
+            <li>Provides vitamin C</li>
+            <li>Contains dietary fibre</li>
+            <li>Provides vitamin K</li>
+          </ul>
+
+          <h3 class="benefit-heading">How to use it</h3>
+          <p>
+            Shred it into fresh salads and slaws, combine it with
+            other vegetables, or lightly cook it as a colourful
+            side dish. Wash thoroughly before use.
+          </p>
+
+          <div class="produce-detail-actions">
+            <a href="#contact" class="button button-green">
+              Contact us to order <span>↗</span>
+            </a>
+            <a href="#all-vegetables" class="back-to-collection">
+              ↑ See other fruits & vegetables
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 03: CUCUMBER -->
+
+      <article class="produce-detail" id="cucumber">
+        <div class="produce-detail-image">
+          <img src="images/cucumber.jpg"
+               alt="Fresh cucumber"
+               loading="lazy">
+        </div>
+
+        <div class="produce-detail-copy">
+          <span class="eyebrow">03 / CUCUMBER</span>
+          <h2>Cool, crisp cucumber.</h2>
+
+          <p>
+            Cucumber is a refreshing, water-rich vegetable commonly
+            enjoyed raw. Its crisp texture works well in salads,
+            sandwiches, snacks and chilled dishes.
+          </p>
+
+          <h3 class="benefit-heading">Nutritional benefits</h3>
+          <ul class="benefit-list">
+            <li>High water content</li>
+            <li>Provides some vitamin K</li>
+            <li>Low in calories</li>
+            <li>Contributes to hydration</li>
+          </ul>
+
+          <h3 class="benefit-heading">How to use it</h3>
+          <p>
+            Wash well and slice into salads, serve as a fresh snack,
+            or combine with tomatoes and leafy vegetables.
+          </p>
+
+          <div class="produce-detail-actions">
+            <a href="#contact" class="button button-green">
+              Contact us to order <span>↗</span>
+            </a>
+            <a href="#all-vegetables" class="back-to-collection">
+              ↑ See other fruits & vegetables
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 04: BELL PEPPER -->
+
+      <article class="produce-detail" id="bell-pepper">
+        <div class="produce-detail-image">
+          <img src="images/bell-pepper.jpg"
+               alt="Fresh red, yellow and green bell peppers"
+               loading="lazy">
+        </div>
+
+        <div class="produce-detail-copy">
+          <span class="eyebrow">04 / BELL PEPPER</span>
+          <h2>Colourful, crisp and naturally sweet.</h2>
+
+          <p>
+            Bell peppers are known for their crisp texture, mild
+            flavour and vibrant colours. Unlike hot peppers, they
+            are not characteristically spicy. They bring colour,
+            freshness and versatility to a wide range of meals.
+          </p>
+
+          <h3 class="benefit-heading">Nutritional benefits</h3>
+          <ul class="benefit-list">
+            <li>Rich in vitamin C, especially when raw</li>
+            <li>Red varieties provide beta-carotene</li>
+            <li>Contain beneficial plant compounds</li>
+            <li>Low in calories</li>
+          </ul>
+
+          <h3 class="benefit-heading">How to use it</h3>
+          <p>
+            Slice into salads, add to stir-fries, combine with
+            onions and tomatoes, or use in rice dishes, sauces
+            and roasted vegetable meals.
+          </p>
+
+          <div class="produce-detail-actions">
+            <a href="#contact" class="button button-green">
+              Contact us to order <span>↗</span>
+            </a>
+            <a href="#all-vegetables" class="back-to-collection">
+              ↑ See other fruits & vegetables
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 05: HABANERO PEPPER -->
+
+      <article class="produce-detail" id="habanero">
+        <div class="produce-detail-image">
+          <img src="images/habanero-pepper.jpg"
+               alt="Fresh orange and red habanero peppers"
+               loading="lazy">
+        </div>
+
+        <div class="produce-detail-copy">
+          <span class="eyebrow">05 / HABANERO PEPPER</span>
+          <h2>Small pepper. Serious heat.</h2>
+
+          <p>
+            Habanero peppers are recognised for their intense heat,
+            fruity aroma and distinctive flavour. They are much
+            hotter than bell peppers, so a small quantity can make
+            a noticeable difference to a dish.
+          </p>
+
+          <h3 class="benefit-heading">Nutritional benefits</h3>
+          <ul class="benefit-list">
+            <li>Provides vitamin C</li>
+            <li>Contains capsaicin, the compound responsible for its heat</li>
+            <li>Contains beneficial plant compounds</li>
+            <li>Adds intense flavour in small quantities</li>
+          </ul>
+
+          <h3 class="benefit-heading">How to use it</h3>
+          <p>
+            Use sparingly in pepper sauces, stews, marinades and
+            seasoning blends. Handle carefully, avoid touching
+            your eyes, and wash your hands after preparing hot peppers.
+          </p>
+
+          <div class="produce-detail-actions">
+            <a href="#contact" class="button button-green">
+              Contact us to order <span>↗</span>
+            </a>
+            <a href="#all-vegetables" class="back-to-collection">
+              ↑ See other fruits & vegetables
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 06: WATERMELON -->
+
+      <article class="produce-detail" id="watermelon">
+        <div class="produce-detail-image">
+          <img src="images/watermelon.jpg"
+               alt="Fresh watermelon"
+               loading="lazy">
+        </div>
+
+        <div class="produce-detail-copy">
+          <span class="eyebrow">06 / WATERMELON</span>
+          <h2>Refreshingly sweet watermelon.</h2>
+
+          <p>
+            Watermelon is a popular fruit with a high water content,
+            a sweet flavour and a juicy texture. It is especially
+            enjoyable when served chilled.
+          </p>
+
+          <h3 class="benefit-heading">Nutritional benefits</h3>
+          <ul class="benefit-list">
+            <li>Supports hydration through its water content</li>
+            <li>Contains lycopene</li>
+            <li>Provides vitamin C</li>
+            <li>Provides natural carbohydrates</li>
+          </ul>
+
+          <h3 class="benefit-heading">How to use it</h3>
+          <p>
+            Enjoy fresh slices, add to fruit platters, or blend
+            into a refreshing drink without excessive added sugar.
+          </p>
+
+          <div class="produce-detail-actions">
+            <a href="#contact" class="button button-green">
+              Contact us to order <span>↗</span>
+            </a>
+            <a href="#all-vegetables" class="back-to-collection">
+              ↑ See other fruits & vegetables
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 07: GREEN BEANS -->
+
+      <article class="produce-detail" id="green-beans">
+        <div class="produce-detail-image">
+          <img src="images/green-beans.jpg"
+               alt="Fresh green beans"
+               loading="lazy">
+        </div>
+
+        <div class="produce-detail-copy">
+          <span class="eyebrow">07 / GREEN BEANS</span>
+          <h2>Green beans, full of possibilities.</h2>
+
+          <p>
+            Green beans are tender pods used in a wide range of
+            meals. Their texture makes them suitable for quick
+            cooking and mixed vegetable dishes.
+          </p>
+
+          <h3 class="benefit-heading">Nutritional benefits</h3>
+          <ul class="benefit-list">
+            <li>Provides dietary fibre</li>
+            <li>Contains folate</li>
+            <li>Provides vitamin C</li>
+            <li>Contains vitamin K</li>
+          </ul>
+
+          <h3 class="benefit-heading">How to use it</h3>
+          <p>
+            Steam, boil or lightly sauté until tender. Add to rice
+            dishes, stir-fries, vegetable sides and stews.
+          </p>
+
+          <div class="produce-detail-actions">
+            <a href="#contact" class="button button-green">
+              Contact us to order <span>↗</span>
+            </a>
+            <a href="#all-vegetables" class="back-to-collection">
+              ↑ See other fruits & vegetables
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 08: OKRA -->
+
+      <article class="produce-detail" id="okra">
+        <div class="produce-detail-image">
+          <img src="images/okra.jpg"
+               alt="Fresh okra pods"
+               loading="lazy">
+        </div>
+
+        <div class="produce-detail-copy">
+          <span class="eyebrow">08 / OKRA</span>
+          <h2>A favourite for soups and stews.</h2>
+
+          <p>
+            Okra is widely used in West African cooking. When cut
+            and cooked, it releases a natural mucilage that gives
+            soups their characteristic texture.
+          </p>
+
+          <h3 class="benefit-heading">Nutritional benefits</h3>
+          <ul class="benefit-list">
+            <li>Contains dietary fibre</li>
+            <li>Provides folate</li>
+            <li>Contains vitamin C</li>
+            <li>Provides vitamin K</li>
+          </ul>
+
+          <h3 class="benefit-heading">How to use it</h3>
+          <p>
+            Use in okra soup, combine with other vegetables, or
+            cook with fish and other preferred ingredients.
+          </p>
+
+          <div class="produce-detail-actions">
+            <a href="#contact" class="button button-green">
+              Contact us to order <span>↗</span>
+            </a>
+            <a href="#all-vegetables" class="back-to-collection">
+              ↑ See other fruits & vegetables
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 09: UGU -->
+
+      <article class="produce-detail" id="ugu">
+        <div class="produce-detail-image">
+          <img src="images/ugu.jpg"
+               alt="Fresh ugu leaves"
+               loading="lazy">
+        </div>
+
+        <div class="produce-detail-copy">
+          <span class="eyebrow">09 / UGU</span>
+          <h2>Leafy goodness for everyday cooking.</h2>
+
+          <p>
+            Ugu, also known as fluted pumpkin leaves, is a familiar
+            leafy vegetable in Nigerian cooking. It is valued for
+            its flavour and versatility in traditional dishes.
+          </p>
+
+          <h3 class="benefit-heading">Nutritional benefits</h3>
+          <ul class="benefit-list">
+            <li>Contains beta-carotene</li>
+            <li>Provides folate</li>
+            <li>Contains iron</li>
+            <li>Provides other vitamins and minerals</li>
+          </ul>
+
+          <h3 class="benefit-heading">How to use it</h3>
+          <p>
+            Wash thoroughly, slice and add to soups or vegetable
+            sauces. Avoid prolonged cooking when possible to help
+            preserve quality.
+          </p>
+
+          <div class="produce-detail-actions">
+            <a href="#contact" class="button button-green">
+              Contact us to order <span>↗</span>
+            </a>
+            <a href="#all-vegetables" class="back-to-collection">
+              ↑ See other fruits & vegetables
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 10: TOMATOES -->
+
+      <article class="produce-detail" id="tomatoes">
+        <div class="produce-detail-image">
+          <img src="images/tomatoes.jpg"
+               alt="Fresh tomatoes"
+               loading="lazy">
+        </div>
+
+        <div class="produce-detail-copy">
+          <span class="eyebrow">10 / TOMATOES</span>
+          <h2>A staple in the kitchen.</h2>
+
+          <p>
+            Tomatoes bring colour, acidity and rich flavour to
+            everyday meals. They are widely used in Nigerian sauces,
+            stews, soups and vegetable dishes.
+          </p>
+
+          <h3 class="benefit-heading">Nutritional benefits</h3>
+          <ul class="benefit-list">
+            <li>Contains lycopene</li>
+            <li>Provides vitamin C</li>
+            <li>Contains potassium</li>
+            <li>Provides beneficial plant compounds</li>
+          </ul>
+
+          <h3 class="benefit-heading">How to use it</h3>
+          <p>
+            Use fresh in salads, blend for stews, cook into sauces,
+            or combine with peppers and onions.
+          </p>
+
+          <div class="produce-detail-actions">
+            <a href="#contact" class="button button-green">
+              Contact us to order <span>↗</span>
+            </a>
+            <a href="#all-vegetables" class="back-to-collection">
+              ↑ See other fruits & vegetables
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 11: CARROTS -->
+
+      <article class="produce-detail" id="carrots">
+        <div class="produce-detail-image">
+          <img src="images/carrots.jpg"
+               alt="Fresh carrots"
+               loading="lazy">
+        </div>
+
+        <div class="produce-detail-copy">
+          <span class="eyebrow">11 / CARROTS</span>
+          <h2>Bright colour, natural crunch.</h2>
+
+          <p>
+            Carrots are crunchy root vegetables that can be eaten
+            raw or cooked. Their naturally sweet flavour works
+            well in snacks, salads and many cooked meals.
+          </p>
+
+          <h3 class="benefit-heading">Nutritional benefits</h3>
+          <ul class="benefit-list">
+            <li>Rich in beta-carotene</li>
+            <li>Provides dietary fibre</li>
+            <li>Contains vitamin K</li>
+            <li>Provides potassium</li>
+          </ul>
+
+          <h3 class="benefit-heading">How to use it</h3>
+          <p>
+            Slice into salads, add to rice and vegetable dishes,
+            or cook in soups and stews.
+          </p>
+
+          <div class="produce-detail-actions">
+            <a href="#contact" class="button button-green">
+              Contact us to order <span>↗</span>
+            </a>
+            <a href="#all-vegetables" class="back-to-collection">
+              ↑ See other fruits & vegetables
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 12: SPINACH -->
+
+      <article class="produce-detail" id="spinach">
+        <div class="produce-detail-image">
+          <img src="images/spinach.jpg"
+               alt="Fresh spinach leaves"
+               loading="lazy">
+        </div>
+
+        <div class="produce-detail-copy">
+          <span class="eyebrow">12 / SPINACH</span>
+          <h2>Leafy greens for varied meals.</h2>
+
+          <p>
+            Spinach is a leafy vegetable that can be used in soups,
+            sauces, omelettes and vegetable sides. It adds colour
+            and variety to a balanced diet.
+          </p>
+
+          <h3 class="benefit-heading">Nutritional benefits</h3>
+          <ul class="benefit-list">
+            <li>Provides folate</li>
+            <li>Contains vitamin K</li>
+            <li>Provides beta-carotene</li>
+            <li>Contains dietary fibre</li>
+          </ul>
+
+          <h3 class="benefit-heading">How to use it</h3>
+          <p>
+            Wash well, then lightly cook or add to soups and
+            other vegetable dishes.
+          </p>
+
+          <div class="produce-detail-actions">
+            <a href="#contact" class="button button-green">
+              Contact us to order <span>↗</span>
+            </a>
+            <a href="#all-vegetables" class="back-to-collection">
+              ↑ See other fruits & vegetables
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 13: SWEET CORN -->
+
+      <article class="produce-detail" id="corn">
+        <div class="produce-detail-image">
+          <img src="images/sweet-corn.jpg"
+               alt="Fresh sweet corn"
+               loading="lazy">
+        </div>
+
+        <div class="produce-detail-copy">
+          <span class="eyebrow">13 / SWEET CORN</span>
+          <h2>A versatile everyday food.</h2>
+
+          <p>
+            Sweet corn offers a naturally sweet flavour and can
+            be served on its own or combined with other foods.
+          </p>
+
+          <h3 class="benefit-heading">Nutritional benefits</h3>
+          <ul class="benefit-list">
+            <li>Provides carbohydrates</li>
+            <li>Contains dietary fibre</li>
+            <li>Provides folate</li>
+            <li>Contains plant compounds</li>
+          </ul>
+
+          <h3 class="benefit-heading">How to use it</h3>
+          <p>
+            Boil or steam, add kernels to rice and salads, or
+            combine with beans and other vegetables.
+          </p>
+
+          <div class="produce-detail-actions">
+            <a href="#contact" class="button button-green">
+              Contact us to order <span>↗</span>
+            </a>
+            <a href="#all-vegetables" class="back-to-collection">
+              ↑ See other fruits & vegetables
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 14: MELON -->
+
+      <article class="produce-detail" id="melon">
+        <div class="produce-detail-image">
+          <img src="images/melon.jpg"
+               alt="Fresh melon"
+               loading="lazy">
+        </div>
+
+        <div class="produce-detail-copy">
+          <span class="eyebrow">14 / MELON</span>
+          <h2>Fruit and food with many uses.</h2>
+
+          <p>
+            The word melon refers to different crops and food
+            varieties. Depending on the type, melon may be eaten
+            as a fruit or used as an ingredient in traditional meals.
+          </p>
+
+          <h3 class="benefit-heading">Nutritional benefits</h3>
+          <ul class="benefit-list">
+            <li>Benefits vary by melon variety</li>
+            <li>Some varieties provide vitamin C</li>
+            <li>Some provide dietary fibre</li>
+            <li>Can contribute to a varied diet</li>
+          </ul>
+
+          <h3 class="benefit-heading">How to use it</h3>
+          <p>
+            Use according to the variety. Confirm the specific
+            melon type before adding detailed product information.
+          </p>
+
+          <div class="produce-detail-actions">
+            <a href="#contact" class="button button-green">
+              Contact us to order <span>↗</span>
+            </a>
+            <a href="#all-vegetables" class="back-to-collection">
+              ↑ See other fruits & vegetables
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- ========================================
+         CONTACT
+    ======================================== -->
+
+    <section class="contact-section vegetable-contact section-padding"
+             id="contact">
+
+      <div class="contact-pill">
+
+        <div class="contact-copy">
+          <span class="eyebrow eyebrow-green">LET'S TALK</span>
+
+          <h2>Looking for fresh produce?</h2>
+
+          <p>
+            Contact Soileva to discuss produce orders,
+            quantities and availability.
+          </p>
+        </div>
+
+        <a href="mailto:hello@soileva.com?subject=Soileva%20Produce%20Enquiry"
+           class="button button-green">
           Contact us to order <span>↗</span>
         </a>
 
-        <a href="#all-vegetables" class="back-to-collection">
-          ↑ See other fruits & vegetables
-        </a>
       </div>
-    </div>
 
-  </article>
+    </section>
 
-  <!-- CABBAGE VARIETY TWO -->
+  </main>
 
-  <article class="produce-detail" id="cabbage-purple">
-
-    <div class="produce-detail-image">
-      <img src="images/cabbage-purple.jpg"
-           alt="Second cabbage variety"
-           loading="lazy">
-    </div>
-
-    <div class="produce-detail-copy">
-      <span class="eyebrow">02 / CABBAGE VARIETY</span>
-
-      <h2>Another cabbage to enjoy.</h2>
-
-      <p>
-        Soileva grows two cabbage varieties. This section gives
-        the second variety its own place, allowing visitors to
-        explore its image and uses separately. Add the exact
-        variety name when you are ready.
-      </p>
-
-      <h3 class="benefit-heading">Nutritional benefits</h3>
-
-      <ul class="benefit-list">
-        <li>Provides vitamin C</li>
-        <li>Contains dietary fibre</li>
-        <li>Provides vitamin K</li>
-        <li>Contributes to a varied diet</li>
-      </ul>
-
-      <h3 class="benefit-heading">How to use it</h3>
-
-      <p>
-        Cabbage can be eaten raw or cooked. Try it in salads,
-        vegetable mixes, stir-fries, soups or stews.
-      </p>
-
-      <div class="produce-detail-actions">
-        <a href="#contact" class="button button-green">
-          Contact us to order <span>↗</span>
-        </a>
-
-        <a href="#all-vegetables" class="back-to-collection">
-          ↑ See other fruits & vegetables
-        </a>
-      </div>
-    </div>
-
-  </article>
-
-  <!-- CUCUMBER -->
-
-  <article class="produce-detail" id="cucumber">
-
-    <div class="produce-detail-image">
-      <img src="images/cucumber.jpg"
-           alt="Fresh cucumber"
-           loading="lazy">
-    </div>
-
-    <div class="produce-detail-copy">
-      <span class="eyebrow">03 / CUCUMBER</span>
-
-      <h2>Cool, crisp cucumber.</h2>
-
-      <p>
-        Cucumber is a refreshing, water-rich vegetable commonly
-        enjoyed raw. Its crisp texture works well in salads,
-        sandwiches, snacks and chilled dishes.
-      </p>
-
-      <h3 class="benefit-heading">Nutritional benefits</h3>
-
-      <ul class="benefit-list">
-        <li>High water content</li>
-        <li>Provides some vitamin K</li>
-        <li>Low in calories</li>
-        <li>Contributes to hydration</li>
-      </ul>
-
-      <h3 class="benefit-heading">How to use it</h3>
-
-      <p>
-        Wash well and slice into salads, serve as a fresh snack,
-        or combine with tomatoes and leafy vegetables.
-      </p>
-
-      <div class="produce-detail-actions">
-        <a href="#contact" class="button button-green">
-          Contact us to order <span>↗</span>
-        </a>
-
-        <a href="#all-vegetables" class="back-to-collection">
-          ↑ See other fruits & vegetables
-        </a>
-      </div>
-    </div>
-
-  </article>
-
-  <!-- PEPPERS -->
-
-  <article class="produce-detail" id="peppers">
-
-    <div class="produce-detail-image">
-      <img src="images/pepper.jpg"
-           alt="Fresh peppers"
-           loading="lazy">
-    </div>
-
-    <div class="produce-detail-copy">
-      <span class="eyebrow">04 / PEPPERS</span>
-
-      <h2>Bring flavour to the table.</h2>
-
-      <p>
-        Peppers are important ingredients in many Nigerian
-        kitchens. Different varieties offer different levels
-        of heat, flavour and colour.
-      </p>
-
-      <h3 class="benefit-heading">Nutritional benefits</h3>
-
-      <ul class="benefit-list">
-        <li>Many varieties provide vitamin C</li>
-        <li>Contain beneficial plant compounds</li>
-        <li>Add flavour without much energy</li>
-        <li>Help bring variety to meals</li>
-      </ul>
-
-      <h3 class="benefit-heading">How to use it</h3>
-
-      <p>
-        Blend into sauces, add to stews, include in vegetable
-        dishes, or use to season soups and other meals.
-      </p>
-
-      <div class="produce-detail-actions">
-        <a href="#contact" class="button button-green">
-          Contact us to order <span>↗</span>
-        </a>
-
-        <a href="#all-vegetables" class="back-to-collection">
-          ↑ See other fruits & vegetables
-        </a>
-      </div>
-    </div>
-
-  </article>
-
-  <!-- WATERMELON -->
-
-  <article class="produce-detail" id="watermelon">
-
-    <div class="produce-detail-image">
-      <img src="images/watermelon.jpg"
-           alt="Fresh watermelon"
-           loading="lazy">
-    </div>
-
-    <div class="produce-detail-copy">
-      <span class="eyebrow">05 / WATERMELON</span>
-
-      <h2>Refreshingly sweet watermelon.</h2>
-
-      <p>
-        Watermelon is a popular fruit with a high water content,
-        a sweet flavour and a juicy texture. It is especially
-        enjoyable when served chilled.
-      </p>
-
-      <h3 class="benefit-heading">Nutritional benefits</h3>
-
-      <ul class="benefit-list">
-        <li>Supports hydration through its water content</li>
-        <li>Contains lycopene</li>
-        <li>Provides vitamin C</li>
-        <li>Provides natural carbohydrates</li>
-      </ul>
-
-      <h3 class="benefit-heading">How to use it</h3>
-
-      <p>
-        Enjoy fresh slices, add to fruit platters, or blend
-        into a refreshing drink without excessive added sugar.
-      </p>
-
-      <div class="produce-detail-actions">
-        <a href="#contact" class="button button-green">
-          Contact us to order <span>↗</span>
-        </a>
-
-        <a href="#all-vegetables" class="back-to-collection">
-          ↑ See other fruits & vegetables
-        </a>
-      </div>
-    </div>
-
-  </article>
-
-  <!-- GREEN BEANS -->
-
-  <article class="produce-detail" id="green-beans">
-
-    <div class="produce-detail-image">
-      <img src="images/green-beans.jpg"
-           alt="Fresh green beans"
-           loading="lazy">
-    </div>
-
-    <div class="produce-detail-copy">
-      <span class="eyebrow">06 / GREEN BEANS</span>
-
-      <h2>Green beans, full of possibilities.</h2>
-
-      <p>
-        Green beans are tender pods used in a wide range of
-        meals. Their texture makes them suitable for quick
-        cooking and mixed vegetable dishes.
-      </p>
-
-      <h3 class="benefit-heading">Nutritional benefits</h3>
-
-      <ul class="benefit-list">
-        <li>Provides dietary fibre</li>
-        <li>Contains folate</li>
-        <li>Provides vitamin C</li>
-        <li>Contains vitamin K</li>
-      </ul>
-
-      <h3 class="benefit-heading">How to use it</h3>
-
-      <p>
-        Steam, boil or lightly sauté until tender. Add to rice
-        dishes, stir-fries, vegetable sides and stews.
-      </p>
-
-      <div class="produce-detail-actions">
-        <a href="#contact" class="button button-green">
-          Contact us to order <span>↗</span>
-        </a>
-
-        <a href="#all-vegetables" class="back-to-collection">
-          ↑ See other fruits & vegetables
-        </a>
-      </div>
-    </div>
-
-  </article>
-
-  <!-- OKRA -->
-
-  <article class="produce-detail" id="okra">
-
-    <div class="produce-detail-image">
-      <img src="images/okra.jpg"
-           alt="Fresh okra pods"
-           loading="lazy">
-    </div>
-
-    <div class="produce-detail-copy">
-      <span class="eyebrow">07 / OKRA</span>
-
-      <h2>A favourite for soups and stews.</h2>
-
-      <p>
-        Okra is widely used in West African cooking. When cut
-        and cooked, it releases a natural mucilage that gives
-        soups their characteristic texture.
-      </p>
-
-      <h3 class="benefit-heading">Nutritional benefits</h3>
-
-      <ul class="benefit-list">
-        <li>Contains dietary fibre</li>
-        <li>Provides folate</li>
-        <li>Contains vitamin C</li>
-        <li>Provides vitamin K</li>
-      </ul>
-
-      <h3 class="benefit-heading">How to use it</h3>
-
-      <p>
-        Use in okra soup, combine with other vegetables, or
-        cook with fish and other preferred ingredients.
-      </p>
-
-      <div class="produce-detail-actions">
-        <a href="#contact" class="button button-green">
-          Contact us to order <span>↗</span>
-        </a>
-
-        <a href="#all-vegetables" class="back-to-collection">
-          ↑ See other fruits & vegetables
-        </a>
-      </div>
-    </div>
-
-  </article>
-
-  <!-- UGU -->
-
-  <article class="produce-detail" id="ugu">
-
-    <div class="produce-detail-image">
-      <img src="images/ugu.jpg"
-           alt="Fresh ugu leaves"
-           loading="lazy">
-    </div>
-
-    <div class="produce-detail-copy">
-      <span class="eyebrow">08 / UGU</span>
-
-      <h2>Leafy goodness for everyday cooking.</h2>
-
-      <p>
-        Ugu, also known as fluted pumpkin leaves, is a familiar
-        leafy vegetable in Nigerian cooking. It is valued for
-        its flavour and versatility in traditional dishes.
-      </p>
-
-      <h3 class="benefit-heading">Nutritional benefits</h3>
-
-      <ul class="benefit-list">
-        <li>Contains beta-carotene</li>
-        <li>Provides folate</li>
-        <li>Contains iron</li>
-        <li>Provides other vitamins and minerals</li>
-      </ul>
-
-      <h3 class="benefit-heading">How to use it</h3>
-
-      <p>
-        Wash thoroughly, slice and add to soups or vegetable
-        sauces. Avoid prolonged cooking when possible to help
-        preserve quality.
-      </p>
-
-      <div class="produce-detail-actions">
-        <a href="#contact" class="button button-green">
-          Contact us to order <span>↗</span>
-        </a>
-
-        <a href="#all-vegetables" class="back-to-collection">
-          ↑ See other fruits & vegetables
-        </a>
-      </div>
-    </div>
-
-  </article>
-
-  <!-- TOMATOES -->
-
-  <article class="produce-detail" id="tomatoes">
-
-    <div class="produce-detail-image">
-      <img src="images/tomatoes.jpg"
-           alt="Fresh tomatoes"
-           loading="lazy">
-    </div>
-
-    <div class="produce-detail-copy">
-      <span class="eyebrow">09 / TOMATOES</span>
-
-      <h2>A staple in the kitchen.</h2>
-
-      <p>
-        Tomatoes bring colour, acidity and rich flavour to
-        everyday meals. They are widely used in Nigerian sauces,
-        stews, soups and vegetable dishes.
-      </p>
-
-      <h3 class="benefit-heading">Nutritional benefits</h3>
-
-      <ul class="benefit-list">
-        <li>Contains lycopene</li>
-        <li>Provides vitamin C</li>
-        <li>Contains potassium</li>
-        <li>Provides beneficial plant compounds</li>
-      </ul>
-
-      <h3 class="benefit-heading">How to use it</h3>
-
-      <p>
-        Use fresh in salads, blend for stews, cook into sauces,
-        or combine with peppers and onions.
-      </p>
-
-      <div class="produce-detail-actions">
-        <a href="#contact" class="button button-green">
-          Contact us to order <span>↗</span>
-        </a>
-
-        <a href="#all-vegetables" class="back-to-collection">
-          ↑ See other fruits & vegetables
-        </a>
-      </div>
-    </div>
-
-  </article>
-
-  <!-- CARROTS -->
-
-  <article class="produce-detail" id="carrots">
-
-    <div class="produce-detail-image">
-      <img src="images/carrots.jpg"
-           alt="Fresh carrots"
-           loading="lazy">
-    </div>
-
-    <div class="produce-detail-copy">
-      <span class="eyebrow">10 / CARROTS</span>
-
-      <h2>Bright colour, natural crunch.</h2>
-
-      <p>
-        Carrots are crunchy root vegetables that can be eaten
-        raw or cooked. Their naturally sweet flavour works
-        well in snacks, salads and many cooked meals.
-      </p>
-
-      <h3 class="benefit-heading">Nutritional benefits</h3>
-
-      <ul class="benefit-list">
-        <li>Rich in beta-carotene</li>
-        <li>Provides dietary fibre</li>
-        <li>Contains vitamin K</li>
-        <li>Provides potassium</li>
-      </ul>
-
-      <h3 class="benefit-heading">How to use it</h3>
-
-      <p>
-        Slice into salads, add to rice and vegetable dishes,
-        or cook in soups and stews.
-      </p>
-
-      <div class="produce-detail-actions">
-        <a href="#contact" class="button button-green">
-          Contact us to order <span>↗</span>
-        </a>
-
-        <a href="#all-vegetables" class="back-to-collection">
-          ↑ See other fruits & vegetables
-        </a>
-      </div>
-    </div>
-
-  </article>
-
-  <!-- SPINACH -->
-
-  <article class="produce-detail" id="spinach">
-
-    <div class="produce-detail-image">
-      <img src="images/spinach.jpg"
-           alt="Fresh spinach leaves"
-           loading="lazy">
-    </div>
-
-    <div class="produce-detail-copy">
-      <span class="eyebrow">11 / SPINACH</span>
-
-      <h2>Leafy greens for varied meals.</h2>
-
-      <p>
-        Spinach is a leafy vegetable that can be used in soups,
-        sauces, omelettes and vegetable sides. It adds colour
-        and variety to a balanced diet.
-      </p>
-
-      <h3 class="benefit-heading">Nutritional benefits</h3>
-
-      <ul class="benefit-list">
-        <li>Provides folate</li>
-        <li>Contains vitamin K</li>
-        <li>Provides beta-carotene</li>
-        <li>Contains dietary fibre</li>
-      </ul>
-
-      <h3 class="benefit-heading">How to use it</h3>
-
-      <p>
-        Wash well, then lightly cook or add to soups and
-        other vegetable dishes.
-      </p>
-
-      <div class="produce-detail-actions">
-        <a href="#contact" class="button button-green">
-          Contact us to order <span>↗</span>
-        </a>
-
-        <a href="#all-vegetables" class="back-to-collection">
-          ↑ See other fruits & vegetables
-        </a>
-      </div>
-    </div>
-
-  </article>
-
-  <!-- SWEET CORN -->
-
-  <article class="produce-detail" id="corn">
-
-    <div class="produce-detail-image">
-      <img src="images/sweet-corn.jpg"
-           alt="Fresh sweet corn"
-           loading="lazy">
-    </div>
-
-    <div class="produce-detail-copy">
-      <span class="eyebrow">12 / SWEET CORN</span>
-
-      <h2>A versatile everyday food.</h2>
-
-      <p>
-        Sweet corn offers a naturally sweet flavour and can
-        be served on its own or combined with other foods.
-      </p>
-
-      <h3 class="benefit-heading">Nutritional benefits</h3>
-
-      <ul class="benefit-list">
-        <li>Provides carbohydrates</li>
-        <li>Contains dietary fibre</li>
-        <li>Provides folate</li>
-        <li>Contains plant compounds</li>
-      </ul>
-
-      <h3 class="benefit-heading">How to use it</h3>
-
-      <p>
-        Boil or steam, add kernels to rice and salads, or
-        combine with beans and other vegetables.
-      </p>
-
-      <div class="produce-detail-actions">
-        <a href="#contact" class="button button-green">
-          Contact us to order <span>↗</span>
-        </a>
-
-        <a href="#all-vegetables" class="back-to-collection">
-          ↑ See other fruits & vegetables
-        </a>
-      </div>
-    </div>
-
-  </article>
-
-  <!-- MELON -->
-
-  <article class="produce-detail" id="melon">
-
-    <div class="produce-detail-image">
-      <img src="images/melon.jpg"
-           alt="Fresh melon"
-           loading="lazy">
-    </div>
-
-    <div class="produce-detail-copy">
-      <span class="eyebrow">13 / MELON</span>
-
-      <h2>Fruit and food with many uses.</h2>
-
-      <p>
-        The word melon refers to different crops and food
-        varieties. Depending on the type, melon may be eaten
-        as a fruit or used as an ingredient in traditional meals.
-      </p>
-
-      <h3 class="benefit-heading">Nutritional benefits</h3>
-
-      <ul class="benefit-list">
-        <li>Benefits vary by melon variety</li>
-        <li>Some varieties provide vitamin C</li>
-        <li>Some provide dietary fibre</li>
-        <li>Can contribute to a varied diet</li>
-      </ul>
-
-      <h3 class="benefit-heading">How to use it</h3>
-
-      <p>
-        Use according to the variety. Confirm the specific
-        melon type before adding detailed product information.
-      </p>
-
-      <div class="produce-detail-actions">
-        <a href="#contact" class="button button-green">
-          Contact us to order <span>↗</span>
-        </a>
-
-        <a href="#all-vegetables" class="back-to-collection">
-          ↑ See other fruits & vegetables
-        </a>
-      </div>
-    </div>
-
-  </article>
-
-</section>
-
-<!-- ========================================
-     CONTACT
-======================================== -->
-
-<section class="contact-section vegetable-contact section-padding"
-         id="contact">
-
-  <div class="contact-pill">
-
-    <div class="contact-copy">
-      <span class="eyebrow eyebrow-green">LET'S TALK</span>
-
-      <h2>Looking for fresh produce?</h2>
-
-      <p>
-        Contact Soileva to discuss produce orders,
-        quantities and availability.
-      </p>
-    </div>
-
-    <a href="mailto:hello@soileva.com?subject=Soileva%20Produce%20Enquiry"
-       class="button button-green">
-      Contact us to order <span>↗</span>
-    </a>
-
-  </div>
-
-</section>
-
-  </main>  <!-- ========================================
+  <!-- ========================================
        SHARED FOOTER
-  ======================================== -->  <footer class="site-footer"><a href="index.html"
-   class="brand footer-brand"
-   aria-label="Soileva homepage">
+  ======================================== -->
 
-  <img
-    src="images/soileva-logo.png"
-    alt="Soileva — Growth with Nature"
-    class="brand-logo"
-    loading="lazy">
-</a>
+  <footer class="site-footer">
 
-<p class="footer-tagline">Growth with Nature.</p>
+    <a href="index.html"
+       class="brand footer-brand"
+       aria-label="Soileva homepage">
 
-<div class="footer-links">
-  <a href="vegetables.html">Vegetables</a>
-  <a href="poultry.html">Poultry</a>
-  <a href="rice.html">Rice</a>
-  <a href="about.html">About Soileva</a>
-  <a href="farmcare.html">Soileva Farmcare</a>
-  <a href="#contact">Contact Us</a>
-</div>
+      <img
+        src="images/soileva-logo.png"
+        alt="Soileva — Growth with Nature"
+        class="brand-logo"
+        loading="lazy">
+    </a>
 
-<p class="copyright">
-  © <span id="copyrightYear"></span> Soileva. All rights reserved.
-</p>
+    <p class="footer-tagline">Growth with Nature.</p>
 
-  </footer>  <script src="script.js"></script></body>
+    <div class="footer-links">
+      <a href="vegetables.html">Vegetables</a>
+      <a href="poultry.html">Poultry</a>
+      <a href="rice.html">Rice</a>
+      <a href="about.html">About Soileva</a>
+      <a href="farmcare.html">Soileva Farmcare</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+
+    <p class="copyright">
+      © <span id="copyrightYear"></span> Soileva. All rights reserved.
+    </p>
+
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
 </html>
